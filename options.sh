@@ -14,6 +14,9 @@ process_option() {
     'h')
       ~/Scripts/homebrew.sh
       break;;
+    'hr')
+      for p in `brew list`; do brew remove $p; done
+      break;;
    'g')
       ~/Scripts/git-repo.sh
       break;;  
