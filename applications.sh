@@ -18,3 +18,6 @@ install_dmg_app "$CHROME_APP_URL" "Google Chrome" "$CHROME_APP_NAME"
 
 # Transmit
 install_zip_app "$TRANSMIT_APP_URL" "$TRANSMIT_APP_NAME"
+
+# Divvy
+install_zip_app "$DIVVY_APP_URL" "$DIVVY_APP_NAME"

@@ -27,3 +27,6 @@ export CHROME_APP_URL="https://dl.google.com/chrome/mac/stable/GGRM/googlechrome
 
 export TRANSMIT_APP_NAME=Transmit.app
 export TRANSMIT_APP_URL="https://www.panic.com/transmit/d/Transmit%204.4.8.zip"
+
+export DIVVY_APP_NAME=Divvy.app
+export DIVVY_APP_URL="http://mizage.com/downloads/Divvy.zip"
