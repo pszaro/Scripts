@@ -18,8 +18,8 @@ brew install readline
 brew install openssl
 brew link openssl --force
 
-# Python3
-brew install python3
+# Python
+brew install python
 
 # Bash
 brew install bash
@@ -47,3 +47,11 @@ brew install terminal-notifier
 
 # Watchman
 brew install watchman
+
+############################################################################################
+############################################################################################
+
+# AWS CLI https://aws.amazon.com/cli/
+pip install awscli
+
+
