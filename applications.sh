@@ -21,3 +21,9 @@ install_zip_app "$TRANSMIT_APP_URL" "$TRANSMIT_APP_NAME"
 
 # Divvy
 install_zip_app "$DIVVY_APP_URL" "$DIVVY_APP_NAME"
+
+# Flux
+install_zip_app "$FLUX_APP_URL" "$FLUX_APP_NAME"
+
+# Handbrake
+install_dmg_app "$HANDBRAKE_APP_URL" "$HANDBRAKE_APP_NAME"

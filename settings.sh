@@ -30,3 +30,9 @@ export TRANSMIT_APP_URL="https://www.panic.com/transmit/d/Transmit%204.4.8.zip"
 
 export DIVVY_APP_NAME=Divvy.app
 export DIVVY_APP_URL="http://mizage.com/downloads/Divvy.zip"
+
+export FLUX_APP_NAME=Flux.app
+export FLUX_APP_URL="https://justgetflux.com/news/pages/macquickstart#download"
+
+export HANDBRAKE_APP_NAME=Handbrake.app
+export HANDBRAKE_APP_URL="http://handbrake.fr/rotation.php?file=HandBrake-0.10.2-MacOSX.6_GUI_x86_64.dmg"
