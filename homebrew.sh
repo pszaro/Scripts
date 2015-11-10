@@ -18,6 +18,9 @@ brew install readline
 brew install openssl
 brew link openssl --force
 
+# Python3
+brew install python3
+
 # Bash
 brew install bash
 
