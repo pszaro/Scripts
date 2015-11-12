@@ -59,7 +59,7 @@ printf "System - Disable software updates\n"
 # Rename default boot disk name
   if [[ -d "/Volumes/Macintosh HD" ]]; then
      printf "Renaming boot disks:"
-     /usr/sbin/diskutil rename "Macintosh HD" "OSX"
+     /usr/sbin/diskutil rename "Macintosh HD" "OS X"
   fi
 
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
