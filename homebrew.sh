@@ -48,6 +48,9 @@ brew install terminal-notifier
 # Watchman
 brew install watchman
 
+# Silver Searcher
+brew install the_silver_searcher
+
 ############################################################################################
 ############################################################################################
 
