@@ -56,6 +56,12 @@ systemsetup -setrestartfreeze on
 printf "System - Disable software updates\n"
 #sudo softwareupdate --schedule off
 
+# Rename default boot disk name
+  if [[ -d "/Volumes/Macintosh HD" ]]; then
+     printf "Renaming boot disks:"
+     /usr/sbin/diskutil rename "Macintosh HD" "OSX"
+  fi
+
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
 
