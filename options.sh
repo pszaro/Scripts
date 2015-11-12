@@ -15,7 +15,10 @@ process_option() {
       ~/Scripts/homebrew.sh
       break;;
     'hr')
+      echo "Discovering brew packages installed and will remove..."
       for p in `brew list`; do brew remove $p; done
+      echo "Discovering pip packages installed and will remove..."
+      for p in `pip list`; do pip uninstall $p; done
       break;;
    'g')
       ~/Scripts/git-repo.sh
@@ -23,6 +26,9 @@ process_option() {
    'p')  
      ~/Scripts/applications.sh
       break;; 
+    'pu')
+     ~/Scripts/pip_upgrade.sh
+      break;;
     'v')
      ~/Scripts/verification.sh
       break;;   
