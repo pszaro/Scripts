@@ -2,6 +2,7 @@
 # Purpose: Check SuperDuper!'s logs and send a push notification to show me what happened with them.
 #
 # Note: The original creator Tj Luo.ma (https://github.com/tjluoma/parse-superduper-logs)
+#
 # I have made some minor changes for this to work for my setup
 #
 
@@ -100,6 +101,7 @@ do
 		then
 				# Send a push message that problems were encountered
 			/usr/local/bin/growlnotify --appIcon Xcode SuperDuper encountered problems -m \"$TEXT\" -i Terminal -s
+      ~/Scripts/rtm-post.sh 'SuperDuper Error Occured, Investigate on MacPro" ^today !1 #Tech '
 
 				# Move the log file to the desktop so we can easily review it later
 				# and so we won't parse it again
