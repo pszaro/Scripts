@@ -51,6 +51,9 @@ brew install watchman
 # Silver Searcher
 brew install the_silver_searcher
 
+# jq (https://stedolan.github.io/jq/)
+brew install jq
+
 ############################################################################################
 ############################################################################################
 
