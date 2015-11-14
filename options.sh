@@ -32,6 +32,9 @@ process_option() {
     'v')
      ~/Scripts/verification.sh
       break;;   
+    'dd')
+    ~/Scripts/list_volumes.sh
+      break;;  
     'i')
      ~/Scripts/turn-indexing-off.sh  
      break;;
