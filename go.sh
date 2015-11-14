@@ -31,6 +31,7 @@ while true; do
     printf "    p:   Install necessary software\n"
     printf "    v:   Verifies necessary software\n"
     printf "  Manage:\n"
+    printf "    dd:  Display Mounted Volumes\n"
     printf "    i:  Turn Indexing Off\n"
     printf "    o:  Turn Indexing On\n"
     printf "    s:  Create Space In Dock\n"
