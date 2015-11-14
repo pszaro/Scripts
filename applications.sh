@@ -27,3 +27,6 @@ install_zip_app "$FLUX_APP_URL" "$FLUX_APP_NAME"
 
 # Handbrake
 install_dmg_app "$HANDBRAKE_APP_URL" "$HANDBRAKE_APP_NAME"
+
+# Growl Notify
+install_zip_app "$GROWLNOTIFY_APP_URL" "$GROWLNOTIFY_APP_NAME"
