@@ -22,7 +22,7 @@ HOST=`hostname -s`
 HOST="$HOST:l"
 
 	# This is where I store logs
-	# You will almost certainly want to change the "Sites/logs.luo.ma"
+	# You will almost certainly want to change this
 LOG="$HOME/Desktop/Dropbox/Mac/SuperDuper/$HOST-SuperDuper-Parsed-Log.txt"
 
 	# if the log dir does not exist, create it
@@ -49,7 +49,7 @@ do
 	# This loop will repeat for each log found, which means that the first
 	# time you run it, you will get a lot of results. You may want to
 	# go to ~//Library/Application Support/SuperDuper!/ and clean out
-	# some of the old logs first
+  # some of the old logs first (This is assuming the default location)
 
 		# initialize a variable
 	PROBLEMS='no'
