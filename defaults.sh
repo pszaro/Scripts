@@ -223,4 +223,4 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
   #defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
   printf "App Store - Enable Debug Menu in the Mac App Store\n"
-  #defaults write com.apple.appstore ShowDebugMenu -bool true
+  defaults write com.apple.appstore ShowDebugMenu -bool true
