@@ -36,3 +36,6 @@ export FLUX_APP_URL="https://justgetflux.com/news/pages/macquickstart#download"
 
 export HANDBRAKE_APP_NAME=Handbrake.app
 export HANDBRAKE_APP_URL="http://handbrake.fr/rotation.php?file=HandBrake-0.10.2-MacOSX.6_GUI_x86_64.dmg"
+
+export GROWLNOTIFY_APP_URL="http://growl.cachefly.net/GrowlNotify-2.1.zip"
+export GROWLNOTIFY_APP_NAME=Growl.app
