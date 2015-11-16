@@ -14,9 +14,11 @@ subheader='-----------------'
 #echo "(Insert title here)" >> README.md
 #echo "$header" >> README.md
 
-#echo "                   " >> README.md
-#echo "Introduction" >> README.md
-#echo "$subheader" >> README.md
+echo "                   " >> README.md
+echo "Introduction" >> README.md
+echo "$subheader" >> README.md
+description=`more .git/description`
+echo $description >> README.md
 
 echo "                   " >> README.md
 echo "GIT Repo Location" >> README.md
