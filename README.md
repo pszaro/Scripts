@@ -1,4 +1,8 @@
                    
+Introduction
+-----------------
+Collection of scripts I use which allows me to quickly setup my configuration
+                   
 GIT Repo Location
 -----------------
 https://github.com/pszaro/Scripts.git
