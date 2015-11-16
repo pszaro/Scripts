@@ -30,6 +30,9 @@ List of Scripts
   - [installers.sh]:
    Defines software installer functions.
 
+  - [lastdayofthemonth.sh]:
+   Determines last day of the current month
+
   - [list_volumes.sh]:
   	Display a list of all mounted volumes, one line per volume.
 
