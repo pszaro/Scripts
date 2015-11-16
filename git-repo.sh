@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Sets up and launches (if necessary) installed software.
+#
+# Description: Sets up and launches (if necessary) installed software.
+#
 
 # Bash
 #sudo bash -c "printf '/usr/local/bin/bash\n' >> /etc/shells"

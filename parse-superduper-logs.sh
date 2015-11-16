@@ -1,5 +1,6 @@
 #!/bin/zsh -f
-# Purpose: Check SuperDuper!'s logs and send a push notification to show me what happened with them.
+#
+# Description: Check SuperDuper!'s logs and send a push notification to show me what happened with them.
 #
 # Note: The original creator Tj Luo.ma (https://github.com/tjluoma/parse-superduper-logs)
 #

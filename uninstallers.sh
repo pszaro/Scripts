@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Defines uninstall functions.
+#
+# Description: Defines uninstall functions.
+#
 
 # Uninstalls selected application.
 uninstall_application() {

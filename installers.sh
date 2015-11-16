@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Defines software installer functions.
+#
+# Description: Defines software installer functions.
+#
 
 # Mounts a disk image.
 # Parameters:

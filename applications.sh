@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Installs OSX applications.
+#
+# Description: Installs OSX applications.
+#
 
 # EXECUTION
 # Dropbox

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# Description: Upgrade all outdated python modules.
+#
 # ==============================================================================
 usage() { cat <<- DOCUMENT
 
@@ -7,9 +10,6 @@ usage() { cat <<- DOCUMENT
     AUTHOR:      Sang Han
     CREATED:     08/23/2014
     REVISION:    1.0
-
-    DESCRIPTION:
-        Upgrade all outdated python modules.
 
     REQUIREMENTS:
         pip

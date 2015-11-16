@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Description: Main Menu
+#
 
 # DESCRIPTION
 # Executes the command line interface.

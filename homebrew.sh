@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Installs Homebrew software.
+#
+# Description: Installs Homebrew and PIP software.
+#
 
 # EXECUTION
 # Homebrew

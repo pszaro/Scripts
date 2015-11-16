@@ -1,7 +1,6 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Defines global settings.
+# Description: Defines global settings.
+#
 
 # SETTINGS
 # General

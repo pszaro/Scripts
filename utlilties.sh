@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Defines general utility functions.
+#
+# Description: Defines general utility functions.
+#
 
 # Answers the file name.
 # Parameters:

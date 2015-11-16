@@ -1,7 +1,6 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Applies system and application defaults.
+# Description: Applies system and application defaults.
+#
 
 # EXECUTION
 printf "System - Disable boot sound effects\n"

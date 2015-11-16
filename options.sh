@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Defines command line prompt options.
+#
+# Description: Defines command line prompt options.
+#
 
 # Process option selection.
 # Parameters:

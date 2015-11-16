@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# DESCRIPTION
-# Defines verification/validation functions.
+#
+# Description: Defines verification/validation functions.
+#
 
 # Verifies Homebrew software exists.
 # Parameters:
