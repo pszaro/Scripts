@@ -30,3 +30,12 @@ install_dmg_app "$HANDBRAKE_APP_URL" "$HANDBRAKE_APP_NAME"
 
 # Growl Notify
 install_zip_app "$GROWLNOTIFY_APP_URL" "$GROWLNOTIFY_APP_NAME"
+
+# Clean My Mac 3
+install_dmg_app "$CLEANMYMAC_APP_URL" "$CLEANMYMAC_APP_NAME"
+
+# GeekTool
+install_zip_app "$GEEKTOOL_APP_URL" "$GEEKTOOL_APP_NAME"
+
+# Atom
+install_zip_app "$ATOM_APP_URL" "$ATOM_APP_NAME"
