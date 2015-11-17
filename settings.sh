@@ -36,5 +36,14 @@ export FLUX_APP_URL="https://justgetflux.com/news/pages/macquickstart#download"
 export HANDBRAKE_APP_NAME=Handbrake.app
 export HANDBRAKE_APP_URL="http://handbrake.fr/rotation.php?file=HandBrake-0.10.2-MacOSX.6_GUI_x86_64.dmg"
 
-export GROWLNOTIFY_APP_URL="http://growl.cachefly.net/GrowlNotify-2.1.zip"
 export GROWLNOTIFY_APP_NAME=Growl.app
+export GROWLNOTIFY_APP_URL="http://growl.cachefly.net/GrowlNotify-2.1.zip"
+
+export CLEANMYMAC_APP_NAME="CleanMyMac 3.app"
+export CLEANMYMAC_APP_URL="http://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
+
+export GEEKTOOL_APP_NAME="Disk Inventory X.app"
+export GEEKTOOL_APP_URL="http://download.tynsoe.org/GeekTool-3.1.3.zip"
+
+export ATOM_APP_NAME="Atom.app"
+export ATOM_APP_URL="https://github.com/atom/atom/releases/download/v1.2.0/atom-mac.zip"
