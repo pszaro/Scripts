@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 # Description: This script generates a dynamic README file.
 #
 
@@ -44,4 +45,3 @@ echo >> README.md
 #####################################################
 
 cat README.md
-
