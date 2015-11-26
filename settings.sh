@@ -47,3 +47,6 @@ export GEEKTOOL_APP_URL="http://download.tynsoe.org/GeekTool-3.1.3.zip"
 
 export ATOM_APP_NAME="Atom.app"
 export ATOM_APP_URL="https://github.com/atom/atom/releases/download/v1.2.0/atom-mac.zip"
+
+export TME_APP_NAME="TimeMachineEditor.app"
+export TME_APP_URL="http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip"
