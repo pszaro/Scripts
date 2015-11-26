@@ -39,3 +39,6 @@ install_zip_app "$GEEKTOOL_APP_URL" "$GEEKTOOL_APP_NAME"
 
 # Atom
 install_zip_app "$ATOM_APP_URL" "$ATOM_APP_NAME"
+
+# Time Machine Editor
+install_zip_app "$TME_APP_URL" "$TME_APP_NAME"
