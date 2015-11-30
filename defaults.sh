@@ -27,6 +27,15 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 printf "System - Speed Up Animations\n"
 defaults write -g NSWindowResizeTime -float 0.003
 
+printf "System - Disable animations when opening and closing windows\n"
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+printf "System - Disable animations when opening a Quick Look window\n"
+defaults write -g QLPanelAnimationDuration -float 0
+
+printf "System - Make all animations faster that are used by Mission Control\n"
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
 printf "System - Increase window resize speed for Cocoa applications\n"
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
