@@ -189,6 +189,9 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
   printf "Chrome - Prevent native print dialog, use system dialog instead\n"
   defaults write com.google.Chrome DisablePrintPreview -boolean true
 
+  printf "Photos - Disable Photos show up when devices are plugged (OS X 10.11 and earlier)"
+  defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+  
   printf "Mail - Copy email addresses as 'foo@example.com' instead of 'Foo Bar <foo@example.com>'\n"
   defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
