@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Updated target to DropBox so db can comes across machines
 TARGET=~/Desktop/Dropbox/.todo
 
 if [ -d $1 ] && [ $# -gt 0 ]
