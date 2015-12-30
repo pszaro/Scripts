@@ -174,6 +174,7 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
 
   printf "Safari - Enable debug menu\n"
   #defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+  defaults write com.apple.Safari IncludeInternalDebugMenu 1
 
   printf "Safari - Enable the Develop menu and the Web Inspector\n"
   #defaults write com.apple.Safari IncludeDevelopMenu -bool true
