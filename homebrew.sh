@@ -57,6 +57,9 @@ brew install jq
 # libdvdcss (since it was removed in El Capitan - https://www.reddit.com/r/osx/comments/3n6gz4/el_capitan_apparently_broke_handbrake_ripping/)
 brew install libdvdcss
 
+# ccat
+brew install ccat
+
 ############################################################################################
 ############################################################################################
 
