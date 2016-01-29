@@ -30,6 +30,9 @@ export TRANSMIT_APP_URL="https://www.panic.com/transmit/d/Transmit%204.4.8.zip"
 export DIVVY_APP_NAME=Divvy.app
 export DIVVY_APP_URL="http://mizage.com/downloads/Divvy.zip"
 
+export ITERM_APP_NAME=iTerm.app
+export ITERM_APP_URL="https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip"
+
 export FLUX_APP_NAME=Flux.app
 export FLUX_APP_URL="https://justgetflux.com/news/pages/macquickstart#download"
 
