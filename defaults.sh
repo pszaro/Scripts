@@ -58,13 +58,16 @@ printf "System - Require password immediately after sleep or screen saver begins
 printf "System - Avoid creating .DS_Store files on network volumes\n"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+printf "System - Avoid creating .DS_Store files on USB volumes\n"
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 printf "System - Automatically restart if system freezes\n"
 systemsetup -setrestartfreeze on
 
 printf "System - Disable software updates\n"
 #sudo softwareupdate --schedule off
 
-print "Disable Sudden Motion Sensor (not needed for SSD drives)\n"
+print "System - Disable Sudden Motion Sensor (not needed for SSD drives)\n"
 sudo pmset -a sms 0
 
 # Rename default boot disk name
@@ -134,7 +137,7 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
 #  defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
   printf "Finder - Show the $HOME/Library folder\n"
-#  chflags nohidden $HOME/Library
+  chflags nohidden $HOME/Library
 
   printf "Finder - Show hidden files\n"
 #  defaults write com.apple.finder AppleShowAllFiles -bool true
