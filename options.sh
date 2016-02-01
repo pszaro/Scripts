@@ -47,6 +47,9 @@ process_option() {
      's')
      defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}' ; killall Dock 
      break;;
+     'x')
+     find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'
+     break;;
     'q')
       break;;
     *)
