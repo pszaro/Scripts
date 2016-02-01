@@ -35,6 +35,7 @@ while true; do
     printf "    v:   Verifies necessary software\n"
     printf "  Manage:\n"
     printf "    dd:  Display Mounted Volumes\n"
+    printf "    x:  List All Apps Downloaded from App Store\n"
     printf "    i:  Turn Indexing Off\n"
     printf "    o:  Turn Indexing On\n"
     printf "    s:  Create Space In Dock\n"
