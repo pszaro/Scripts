@@ -64,6 +64,9 @@ systemsetup -setrestartfreeze on
 printf "System - Disable software updates\n"
 #sudo softwareupdate --schedule off
 
+print "Disable Sudden Motion Sensor (not needed for SSD drives)\n"
+sudo pmset -a sms 0
+
 # Rename default boot disk name
   if [[ -d "/Volumes/Macintosh HD" ]]; then
      printf "Renaming boot disks:"
