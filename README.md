@@ -58,6 +58,12 @@ List of Scripts
   - [rtm-post.sh]:
    Ability to add a task to Remember The Milk (RTM) service
 
+  - [s3_weekly_backup.sh]:
+   Backs up specific data to Amazon S3
+
+  - [servicestatus.sh]:
+   Use this to display service status info on my desktop using GeekTool
+
   - [settings.sh]:
    Defines global settings.
 
