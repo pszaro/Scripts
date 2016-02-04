@@ -2,6 +2,9 @@
 # Description: Applies system and application defaults.
 #
 
+# Ask for the administrator password upfront.
+sudo -v
+
 # EXECUTION
 printf "System - Disable boot sound effects\n"
 #sudo nvram SystemAudioVolume=" "
@@ -14,7 +17,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 
 # Checking if ~/Pictures/Screenshots exists
   if [[ ! -d "~/Pictures/Screenshots" ]]; then
-    printf "~/Pictures/Screenshots does not exist, creating..."
+    echo "~/Pictures/Screenshots does not exist, creating..."
     mkdir ~/Pictures/Screenshots
   fi
 printf "System - Move Screeshot location to ~/Pictures/Screenshots\n"
