@@ -22,6 +22,9 @@ List of Scripts
   - [aws_gather_list_of_files_S3.sh]:
    Connects to Amazon S3 and gathers list of all files in all buckets
 
+  - [check_mounted_volumes.sh]:
+   Check and alert if certain Volumes are mounted
+
   - [defaults.sh]:
    Applies system and application defaults.
 
@@ -66,6 +69,12 @@ List of Scripts
 
   - [settings.sh]:
    Defines global settings.
+
+  - [sshattack.sh]:
+   Monitoring system for ssh attempts
+
+  - [test_internet_bandwidth.sh]:
+   Using speedtest-cli, checks internet bandwidth
 
   - [turn-indexing-off.sh]:
    Turns Spotlight Indexing Off
