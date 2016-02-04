@@ -12,6 +12,11 @@ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/
 printf "System - Reveal IP address, hostname, OS version, etc. when clicking the login window clock\n"
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
+# Checking if ~/Pictures/Screenshots exists
+  if [[ ! -d "~/Pictures/Screenshots" ]]; then
+    printf "~/Pictures/Screenshots does not exist, creating..."
+    mkdir ~/Pictures/Screenshots
+  fi
 printf "System - Move Screeshot location to ~/Pictures/Screenshots\n"
 defaults write com.apple.screencapture location ~/Pictures/Screenshots
 
@@ -67,7 +72,7 @@ systemsetup -setrestartfreeze on
 printf "System - Disable software updates\n"
 #sudo softwareupdate --schedule off
 
-print "System - Disable Sudden Motion Sensor (not needed for SSD drives)\n"
+printf "System - Disable Sudden Motion Sensor (not needed for SSD drives)\n"
 sudo pmset -a sms 0
 
 # Rename default boot disk name
@@ -242,3 +247,7 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
 
   printf "App Store - Enable Debug Menu in the Mac App Store\n"
   defaults write com.apple.appstore ShowDebugMenu -bool true
+  
+  printf "Overall - SystemUIServer relaunch"
+  killall SystemUIServer
+
