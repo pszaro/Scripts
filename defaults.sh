@@ -150,6 +150,9 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
   printf "Finder - Show the $HOME/Library folder\n"
   chflags nohidden $HOME/Library
 
+  printf "Finder - Show the /Volumes folder\n"
+  chflags nohidden /Volumes
+
   printf "Finder - Show hidden files\n"
 #  defaults write com.apple.finder AppleShowAllFiles -bool true
 
