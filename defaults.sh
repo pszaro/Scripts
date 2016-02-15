@@ -144,8 +144,8 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
   printf "Dock - Don’t show Dashboard as a Space\n"
 #  defaults write com.apple.dock "dashboard-in-overlay" -bool true
 
-  printf "iCloud - Save to disk by default\n"
-#  defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+  printf "iCloud - Save to disk by default (not to iCloud)\n"
+  defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
   printf "Finder - Show the $HOME/Library folder\n"
   chflags nohidden $HOME/Library
