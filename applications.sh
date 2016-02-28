@@ -3,6 +3,37 @@
 # Description: Installs OSX applications.
 #
 
+# Installing the Xcode command line tools on 10.9.x or higher
+
+osx_vers=$(sw_vers -productVersion | awk -F "." '{print $2}')
+cmd_line_tools_temp_file="${tmpDir}/.com.apple.dt.CommandLineTools.installondemand.in-progress"
+
+# Installing the latest Xcode command line tools on 10.9.x or higher
+echo " Scanning for OSX Version and Xcode command line tools version..."
+
+if [[ "${osx_vers}" -ge 9 ]]; then
+
+  # Create the placeholder file which is checked by the softwareupdate tool
+  # before allowing the installation of the Xcode command line tools.
+
+  touch "${cmd_line_tools_temp_file}"
+
+  # Find the last listed update in the Software Update feed with "Command Line Tools" in the name
+
+  cmd_line_tools=$(softwareupdate -l | awk '/\*\ Command Line Tools/ { $1=$1;print }' | tail -1 | sed 's/^[[ \t]]*//;s/[[ \t]]*$//;s/*//' | cut -c 2-)
+
+  #Install the command line tools
+
+  softwareupdate -i "${cmd_line_tools}" -v
+
+  # Remove the temp file
+
+  if [[ -f "${cmd_line_tools_temp_file}" ]]; then
+    rm -v "${cmd_line_tools_temp_file}"
+  fi
+fi
+# End of Xcode command line tools check/install
+
 # EXECUTION
 # Dropbox
 install_dmg_app "$DROPBOX_APP_URL" "Dropbox Installer" "$DROPBOX_APP_NAME"
