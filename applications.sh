@@ -78,4 +78,4 @@ install_zip_app "$ATOM_APP_URL" "$ATOM_APP_NAME"
 install_zip_app "$TME_APP_URL" "$TME_APP_NAME"
 
 # nvALT
-install_zip_app "$TME_APP_URL" "$TME_APP_NAME"
+install_zip_app "$NVALT_APP_URL" "$NVALT_APP_NAME"
