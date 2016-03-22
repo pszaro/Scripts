@@ -76,3 +76,6 @@ install_zip_app "$ATOM_APP_URL" "$ATOM_APP_NAME"
 
 # Time Machine Editor
 install_zip_app "$TME_APP_URL" "$TME_APP_NAME"
+
+# nvALT
+install_zip_app "$TME_APP_URL" "$TME_APP_NAME"
