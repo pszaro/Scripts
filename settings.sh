@@ -53,3 +53,6 @@ export ATOM_APP_URL="https://github.com/atom/atom/releases/download/v1.2.0/atom-
 
 export TME_APP_NAME="TimeMachineEditor.app"
 export TME_APP_URL="http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip"
+
+export NVALT_APP_NAME="nvALT.app"
+export NVALT_APP_URL="http://abyss.designheresy.com/nvaltb/nvalt2.2b106.zip"
