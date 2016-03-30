@@ -79,3 +79,6 @@ install_zip_app "$TME_APP_URL" "$TME_APP_NAME"
 
 # nvALT
 install_zip_app "$NVALT_APP_URL" "$NVALT_APP_NAME"
+
+# Bartender 2
+install_zip_app "$BT2_APP_URL" "$BT2_APP_NAME"
