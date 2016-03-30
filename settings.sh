@@ -56,3 +56,6 @@ export TME_APP_URL="http://timesoftware.free.fr/timemachineeditor/TimeMachineEdi
 
 export NVALT_APP_NAME="nvALT.app"
 export NVALT_APP_URL="http://abyss.designheresy.com/nvaltb/nvalt2.2b106.zip"
+
+export BT2_APP_NAME="Bartender 2.app"
+export BT2_APP_URL="http://www.macbartender.com/Demo/Bartender%202.zip"
