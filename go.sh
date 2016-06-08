@@ -39,6 +39,7 @@ while true; do
     printf "    i:  Turn Indexing Off\n"
     printf "    o:  Turn Indexing On\n"
     printf "    s:  Create Space In Dock\n"
+    printf "    w:  Determine SSID & Password\n"
     printf "  Maintenance:\n"
     printf "    q:  Quit/Exit\n\n"
     read -p "Enter selection: " response
