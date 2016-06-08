@@ -50,6 +50,12 @@ process_option() {
      'x')
      find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'
      break;;
+     'w')
+     SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'`
+     SSIDPW=`security find-generic-password -wa $SSID`
+     echo "Current SSID: $SSID - $SSIDPW"
+     clear
+     break;;
     'q')
       break;;
     *)
