@@ -32,6 +32,11 @@ fi
 /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
 # FileVault Service
 fdesetup status
+# Apple Update Server
+#
+# Uptime
+echo "Uptime: `uptime | awk '{print $3, $4}' | awk -F "," '{print $1}'`"
+
 
 
 
