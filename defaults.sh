@@ -12,6 +12,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 printf "System - Disable boot sound effects\n"
 #sudo nvram SystemAudioVolume=" "
 
+printf "System - Enable boot sound effects\n"
+# Disabled on 2016 MBP models
+sudo nvram BootAudio=%01
+
 printf "System - Enable Macbook Power Chime with Plugged in\n"
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app &
 
