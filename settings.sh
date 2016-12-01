@@ -25,19 +25,19 @@ export CHROME_APP_NAME="Google Chrome.app"
 export CHROME_APP_URL="https://dl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg"
 
 export TRANSMIT_APP_NAME=Transmit.app
-export TRANSMIT_APP_URL="https://www.panic.com/transmit/d/Transmit%204.4.8.zip"
+export TRANSMIT_APP_URL="https://download.panic.com/transmit/Transmit%204.4.10.zip"
 
 export DIVVY_APP_NAME=Divvy.app
 export DIVVY_APP_URL="http://mizage.com/downloads/Divvy.zip"
 
 export ITERM_APP_NAME=iTerm.app
-export ITERM_APP_URL="https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip"
+export ITERM_APP_URL="https://iterm2.com/downloads/stable/iTerm2-3_0_12.zip"
 
 export FLUX_APP_NAME=Flux.app
 export FLUX_APP_URL="https://justgetflux.com/news/pages/macquickstart#download"
 
 export HANDBRAKE_APP_NAME=Handbrake.app
-export HANDBRAKE_APP_URL="http://handbrake.fr/rotation.php?file=HandBrake-0.10.2-MacOSX.6_GUI_x86_64.dmg"
+export HANDBRAKE_APP_URL="https://handbrake.fr/rotation.php?file=HandBrake-0.10.5-MacOSX.6_GUI_x86_64.dmg"
 
 export GROWLNOTIFY_APP_NAME=Growl.app
 export GROWLNOTIFY_APP_URL="http://growl.cachefly.net/GrowlNotify-2.1.zip"
@@ -55,7 +55,7 @@ export TME_APP_NAME="TimeMachineEditor.app"
 export TME_APP_URL="http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip"
 
 export NVALT_APP_NAME="nvALT.app"
-export NVALT_APP_URL="http://abyss.designheresy.com/nvaltb/nvalt2.2b106.zip"
+export NVALT_APP_URL="http://assets.brettterpstra.com/nvALT2.2.6124.dmg"
 
 export BT2_APP_NAME="Bartender 2.app"
 export BT2_APP_URL="http://www.macbartender.com/Demo/Bartender%202.zip"
