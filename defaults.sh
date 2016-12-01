@@ -85,6 +85,16 @@ printf "System - Disable software updates\n"
 printf "System - Disable Sudden Motion Sensor (not needed for SSD drives)\n"
 sudo pmset -a sms 0
 
+printf "System - Enable the firewall\n"
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+printf "System - Enable logging\n"
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
+
+printf "System - Enable stealth mode\n"
+# Computer hackers scan networks so they can attempt to identify computers to attack. You can prevent your computer from responding to some of these scans by using stealth mode. When stealth mode is enabled, your computer does not respond to ICMP ping requests, and does not answer to connection attempts from a closed TCP or UDP port. This makes it more difficult for attackers to find your computer.
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
 # Rename default boot disk name
   if [[ -d "/Volumes/Macintosh HD" ]]; then
      printf "Renaming boot disks:"
