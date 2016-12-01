@@ -16,7 +16,7 @@ if [[ -d ~/dotfiles ]]; then
   echo "Looks like my .files GIT repo is installed...."
   echo
 else
-  rm -f $HOME/.bash_profile
+  [ -f $HOME/.bash_profile ] && rm -f $HOME/.bash_profile
   install_git_project "git://github.com/pszaro/dotfiles.git" "dotfiles" "./run.sh i"
   source $HOME/.bashrc
 fi
