@@ -18,5 +18,9 @@ if [[ -d ~/dotfiles ]]; then
 else
   [ -f $HOME/.bash_profile ] && rm -f $HOME/.bash_profile
   install_git_project "git://github.com/pszaro/dotfiles.git" "dotfiles" "./run.sh i"
-  source $HOME/.bashrc
+  mv dotfiles ../
+  if [ $? = 0 ]; then
+    echo "Git Repo dotfiles moved to $HOME/dotfiles"
+  fi
+  [ -f source $HOME/.bashrc ] && source $HOME/.bashrc
 fi
