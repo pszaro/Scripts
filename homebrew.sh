@@ -11,6 +11,9 @@ if ! command -v brew > /dev/null; then
   printf "export PATH=\"/usr/local/bin:$PATH\"\n" >> $HOME/.bash_profile
 fi
 
+# According to Homebrew's Anonymous Aggregate User Behaviour Analytics, Homebrew gathers anonymous aggregate user behaviour analytics and reporting these to Google Analytics. To opt out of Homebrew's analytics:
+brew analytics off
+
 # Readline
 brew install readline
 
