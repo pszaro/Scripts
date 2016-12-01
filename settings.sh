@@ -45,7 +45,7 @@ export GROWLNOTIFY_APP_URL="http://growl.cachefly.net/GrowlNotify-2.1.zip"
 export CLEANMYMAC_APP_NAME="CleanMyMac 3.app"
 export CLEANMYMAC_APP_URL="http://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
 
-export GEEKTOOL_APP_NAME="Disk Inventory X.app"
+export GEEKTOOL_APP_NAME="GeekTool.app"
 export GEEKTOOL_APP_URL="http://download.tynsoe.org/GeekTool-3.1.3.zip"
 
 export ATOM_APP_NAME="Atom.app"
