@@ -98,8 +98,18 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 # Rename default boot disk name
   if [[ -d "/Volumes/Macintosh HD" ]]; then
      printf "Renaming boot disks:"
-     /usr/sbin/diskutil rename "Macintosh HD" "OS X"
+     /usr/sbin/diskutil rename "Macintosh HD" "macOS"
   fi
+
+printf "System - Append a raw list hosts to block known malware, advertising or otherwise unwanted domains.\n"
+#
+echo "Displaying Total Lines in /etc/hosts\n"
+wc -l /etc/hosts
+sudo cp -p /etc/hosts /etc/hosts.orig
+echo "Copying down raw list hosts to append to hosts files...\n"
+curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee -a /etc/hosts
+echo "Displaying Total Lines in /etc/hosts\n"
+wc -l /etc/hosts
 
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
