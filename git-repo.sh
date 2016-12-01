@@ -22,5 +22,5 @@ else
   if [ $? = 0 ]; then
     echo "Git Repo dotfiles moved to $HOME/dotfiles"
   fi
-  [ -f source $HOME/.bashrc ] && source $HOME/.bashrc
+  [ -f $HOME/.bashrc ] && source $HOME/.bashrc
 fi
