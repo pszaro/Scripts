@@ -95,6 +95,10 @@ printf "System - Enable stealth mode\n"
 # Computer hackers scan networks so they can attempt to identify computers to attack. You can prevent your computer from responding to some of these scans by using stealth mode. When stealth mode is enabled, your computer does not respond to ICMP ping requests, and does not answer to connection attempts from a closed TCP or UDP port. This makes it more difficult for attackers to find your computer.
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 
+printf "System - Disable Captive Portal assistant utility\n"
+# An attacker could trigger the utility and direct a Mac to a site with malware without user interaction, so it's best to disable this feature and log in to captive portals using your regular Web browser, provided you have first disable any custom dns and/or proxy settings.
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+
 # Rename default boot disk name
   if [[ -d "/Volumes/Macintosh HD" ]]; then
      printf "Renaming boot disks:"
@@ -103,13 +107,22 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 
 printf "System - Append a raw list hosts to block known malware, advertising or otherwise unwanted domains.\n"
 #
-echo "Displaying Total Lines in /etc/hosts\n"
-wc -l /etc/hosts
-sudo cp -p /etc/hosts /etc/hosts.orig
-echo "Copying down raw list hosts to append to hosts files...\n"
-curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee -a /etc/hosts
-echo "Displaying Total Lines in /etc/hosts\n"
-wc -l /etc/hosts
+if [ ! -f /etc/hosts.orig.prerawlist ]; then
+ echo "Displaying Total Lines in /etc/hosts\n"
+ wc -l /etc/hosts
+ sudo cp -p /etc/hosts /etc/hosts.orig.prerawlist
+ echo "Copying down raw list hosts to append to hosts files...\n"
+ curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee -a /etc/hosts
+ echo "Displaying Total Lines in /etc/hosts\n"
+ wc -l /etc/hosts
+else
+ echo
+ echo
+ echo "This is not the inital execution, so raw host list not copied down" 
+ echo
+ echo
+ sleep 5
+fi
 
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
