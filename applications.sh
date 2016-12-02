@@ -3,6 +3,12 @@
 # Description: Installs OSX applications.
 #
 
+# Ask for the administrator password upfront.
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until the script has finished.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # Installing the Xcode command line tools on 10.9.x or higher
 
 osx_vers=$(sw_vers -productVersion | awk -F "." '{print $2}')
