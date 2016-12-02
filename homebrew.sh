@@ -63,6 +63,9 @@ brew install libdvdcss
 # ccat
 brew install ccat
 
+# gcc
+brew install gcc
+
 # speedtest-cli
 brew install speedtest-cli
 
