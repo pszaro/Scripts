@@ -7,7 +7,7 @@
 # Executes the command line interface.
 
 # USAGE
-# ./run.sh OPTION
+# ./go.sh OPTION
 
 # SETTINGS
 source ~/Scripts/settings.sh
