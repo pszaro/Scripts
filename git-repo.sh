@@ -23,4 +23,9 @@ else
     echo "Git Repo dotfiles moved to $HOME/dotfiles"
   fi
   [ -f $HOME/.bashrc ] && source $HOME/.bashrc
+  echo
+  echo
+  echo "Reminder: Execute ./run.sh under ~/dotfiles"
+  echo
+  echo
 fi
