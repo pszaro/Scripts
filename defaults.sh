@@ -101,17 +101,19 @@ printf "System - Disable Captive Portal assistant utility\n"
 # An attacker could trigger the utility and direct a Mac to a site with malware without user interaction, so it's best to disable this feature and log in to captive portals using your regular Web browser, provided you have first disable any custom dns and/or proxy settings.
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 
-# Rename default boot disk name
+printf "Rename default boot disk name\n"
   if [[ -d "/Volumes/Macintosh HD" ]]; then
      printf "Renaming boot disks:"
      /usr/sbin/diskutil rename "Macintosh HD" "macOS"
   fi
 
 printf "System - Download raw list hosts to block known malware, advertising or otherwise unwanted domains.\n"
+sleep 3
 #
 sudo cp -p /etc/hosts /etc/hosts.${datestamp}
 echo "Copying down raw list hosts file (Must have connection to internet)...\n"
 curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee /etc/hosts
+sleep 3
 
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
