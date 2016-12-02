@@ -2,6 +2,8 @@
 # Description: Applies system and application defaults.
 #
 
+datestamp=`date +"%Y%m%d"`
+
 # Ask for the administrator password upfront.
 sudo -v
 
@@ -105,24 +107,11 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.c
      /usr/sbin/diskutil rename "Macintosh HD" "macOS"
   fi
 
-printf "System - Append a raw list hosts to block known malware, advertising or otherwise unwanted domains.\n"
+printf "System - Download raw list hosts to block known malware, advertising or otherwise unwanted domains.\n"
 #
-if [ ! -f /etc/hosts.orig.prerawlist ]; then
- echo "Displaying Total Lines in /etc/hosts\n"
- wc -l /etc/hosts
- sudo cp -p /etc/hosts /etc/hosts.orig.prerawlist
- echo "Copying down raw list hosts to append to hosts files...\n"
- curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee -a /etc/hosts
- echo "Displaying Total Lines in /etc/hosts\n"
- wc -l /etc/hosts
-else
- echo
- echo
- echo "This is not the inital execution, so raw host list not copied down" 
- echo
- echo
- sleep 5
-fi
+sudo cp -p /etc/hosts /etc/hosts.${datestamp}
+echo "Copying down raw list hosts file (Must have connection to internet)...\n"
+curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee /etc/hosts
 
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
