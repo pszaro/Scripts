@@ -13,7 +13,7 @@
 echo "Checking git repos..."
 if [[ -d ~/dotfiles ]]; then 
   echo
-  echo "Looks like my .files GIT repo is installed...."
+  echo "Looks like my dotfiles GIT repo is installed...."
   echo
 else
   [ -f $HOME/.bash_profile ] && rm -f $HOME/.bash_profile
