@@ -25,8 +25,10 @@ while true; do
   if [[ $# == 0 ]]; then
     printf "\nUsage: run OPTION\n"
     printf "\nOSX Options:\n"
-    printf "  Setup:\n"
+    printf "  Setup & Config:\n"
     printf "    b:   Apply default system settings\n"
+    printf "    c:   Disable Apple Call Homes (custom)\n"
+    printf "    cr:  Enable Apple Call Homes (stock)\n"
     printf "    g:   Install my git repos (if not installed)\n"
     printf "    h:   Install Homebrew|pip software\n"
     printf "    hr:  Remove ALL Homebrew|pip software\n"
@@ -41,6 +43,8 @@ while true; do
     printf "    s:  Create Space In Dock\n"
     printf "    w:  Determine SSID & Password\n"
     printf "  Maintenance:\n"
+    printf "    -         \n\n"
+    printf "  Other:\n"
     printf "    q:  Quit/Exit\n\n"
     read -p "Enter selection: " response
     printf "\n"
