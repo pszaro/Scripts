@@ -11,6 +11,12 @@ process_option() {
     'b')
      ~/Scripts/defaults.sh
      break;;
+    'c')
+     ~/Scripts/applecallhome.sh fixmacos
+     break;;
+    'cr')
+     ~/Scripts/applecallhome.sh restore
+     break;;
     'h')
       ~/Scripts/homebrew.sh
       break;;
