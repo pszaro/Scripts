@@ -4,9 +4,9 @@
 # Simple shell script to fix macOS privacy issues and remove mostly useless macOS calls to cupertino.
 
 # Usage:
-#       bash homecall.sh fixmacos
+#       bash applecallhome.sh fixmacos
 # Optionally you can restore it back to default by
-#       bash homecall.sh restore
+#       bash applecallhome.sh restore
 
 DAEMONS=()
 DAEMONS+=('com.apple.netbiosd') #Netbiosd is microsoft's networking service. used to share files between mac and windows
