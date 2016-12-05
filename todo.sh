@@ -40,6 +40,8 @@ fi
 
 if [ "$1" = "search" ]
   then
-    grep -IiFnr --directories=recurse "TODO" * >> $TARGET
+    grep -IiFnr --directories=recurse "TODO" * | grep -v "todo.sh"| uniq >> $TARGET
+    cat $TARGET | sort -u > $TARGET.bak
+    mv $TARGET.bak $TARGET
     echo ; nl $TARGET ; echo
 fi
