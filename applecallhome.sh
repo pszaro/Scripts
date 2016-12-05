@@ -84,9 +84,6 @@ AGENTS+=('com.apple.SafariNotificationAgent') #Notifications in Safari
 
 help_msg(){
   echo ""
-  echo "macOS home call dropper by karek314"
-  echo "version 1.0"
-  echo ""
   echo "Available commands"
   echo "fixmacos - fix your macOS to stop/limit invade your privacy"
   echo "restore - restore to default settings"
