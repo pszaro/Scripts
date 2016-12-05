@@ -28,12 +28,6 @@ List of Scripts
   - [go.sh]:
    Main Menu
 
-  - [go.sh]:
-   Applies system and application defaults.
-
-  - [go.sh]:
-   Installs Homebrew and PIP software.
-
   - [lastdayofthemonth.sh]:
    Determines last day of the current month
 
