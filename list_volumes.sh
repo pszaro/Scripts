@@ -1,5 +1,5 @@
 #!/bin/sh
-# Description:	Display a list of all mounted volumes, one line per volume.
+# Description: Display a list of all mounted volumes, one line per volume.
 
 diskutil list -plist 			|\
 fgrep -A1 '<key>MountPoint</key>' 	|\
