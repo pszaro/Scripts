@@ -16,38 +16,29 @@ List of Scripts
   - [Pfizer-Generate-Year-Review.sh]:
    Scraps Year Daily Logs For Pfizer and create one log for the year
 
-  - [applications.sh]:
-   Installs OSX applications.
-
   - [aws_gather_list_of_files_S3.sh]:
    Connects to Amazon S3 and gathers list of all files in all buckets
 
   - [check_mounted_volumes.sh]:
    Check and alert if certain Volumes are mounted
 
-  - [defaults.sh]:
-   Applies system and application defaults.
-
-  - [git-repo.sh]:
-   Sets up and launches (if necessary) installed software.
-
-  - [gitupdate.sh]:
-   Compares local and remote repositories and performs git pull if needed.
+  - [display_startup.sh]:
+   Displays various info on system
 
   - [go.sh]:
    Main Menu
 
-  - [homebrew.sh]:
-   Installs Homebrew and PIP software.
+  - [go.sh]:
+   Applies system and application defaults.
 
-  - [installers.sh]:
-   Defines software installer functions.
+  - [go.sh]:
+   Installs Homebrew and PIP software.
 
   - [lastdayofthemonth.sh]:
    Determines last day of the current month
 
   - [list_volumes.sh]:
-  	Display a list of all mounted volumes, one line per volume.
+   Display a list of all mounted volumes, one line per volume.
 
   - [options.sh]:
    Defines command line prompt options.
@@ -67,27 +58,18 @@ List of Scripts
   - [servicestatus.sh]:
    Use this to display service status info on my desktop using GeekTool
 
-  - [settings.sh]:
-   Defines global settings.
-
   - [sshattack.sh]:
    Monitoring system for ssh attempts
 
   - [test_internet_bandwidth.sh]:
    Using speedtest-cli, checks internet bandwidth
 
+  - [testservicestatus.sh]:
+   Use this to display service/system status info on my desktop using GeekTool
+
   - [turn-indexing-off.sh]:
    Turns Spotlight Indexing Off
 
   - [turn-indexing-on.sh]:
    Turns Spotlight Indexing On
-
-  - [uninstallers.sh]:
-   Defines uninstall functions.
-
-  - [utlilties.sh]:
-   Defines general utility functions.
-
-  - [verification.sh]:
-   Defines verification/validation functions.
 
