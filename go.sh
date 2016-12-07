@@ -645,8 +645,8 @@ defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 printf "Disk Utility - Enable debug menu\n"
-#defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-#defaults write com.apple.DiskUtility advanced-image-options -bool true
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 printf "Time Machine - Prevent prompting to use new hard drives as backup volume\n"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
