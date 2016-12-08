@@ -116,6 +116,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go folders:remove-empty${GRAY} : Remove empty subdirectories\n"
     printf "${LIGHTBLUE}go apps:close-all${GRAY} : Close all opened apps\n"
     printf "${LIGHTBLUE}go apps:app-store${GRAY} : Get list of installed apps from App Store\n"
+    printf "${LIGHTBLUE}go display:users${GRAY} : Display defined local accounts\n"
     printf "${LIGHTBLUE}go display-all${GRAY} : Display mounted volumes and disks\n"
     printf "${LIGHTBLUE}go eject-all${GRAY} : Eject all mounted volumes and disks\n"
     printf "${LIGHTBLUE}go battery:status${GRAY} : Get battery information\n"
@@ -236,6 +237,7 @@ elif [ "$function" == "list:general" ]; then
     printf "${LIGHTBLUE}go folders:remove-empty${GRAY} : Remove empty subdirectories\n"
     printf "${LIGHTBLUE}go apps:close-all${GRAY} : Close all opened apps\n"
     printf "${LIGHTBLUE}go apps:app-store${GRAY} : Get list of installed apps from App Store\n"
+    printf "${LIGHTBLUE}go display:users${GRAY} : Display defined local accounts\n"
     printf "${LIGHTBLUE}go display-all${GRAY} : Display mounted volumes and disks\n"
     printf "${LIGHTBLUE}go eject-all${GRAY} : Eject all mounted volumes and disks\n"
     printf "${LIGHTBLUE}go battery:status${GRAY} : Get battery information\n"
@@ -903,6 +905,23 @@ elif [ "$function" == "apps:app-store" ]; then
 elif [ "$function" == "screensaver" ]; then
   printf "${GREEN}open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app\n\n${NC}"
   open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+
+# Display all locally defined accounts  
+elif [ "$function" == "display:users" ]; then
+  USERS=$(ls -1 /Users)
+
+  for u in $USERS
+  do
+  if [[ $u = .* ]]; then
+    echo > /dev/null
+  elif [[ "$u" = Deleted* || "$u" = Users* ]]; then
+    echo > /dev/null
+  elif [ "$u" = "Shared" ]; then
+    echo > /dev/null
+  else
+    echo $u
+  fi
+  done
 
 # Display all mounted volumes and disk
 elif [ "$function" == "display-all" ]; then
