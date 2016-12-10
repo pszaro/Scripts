@@ -129,7 +129,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go gzip:extract ${LIGHTGREEN}X${GRAY} : Extract Gzip file to current folder - ${LIGHTGREEN}X = Gzip file to extract\n"
     printf "${LIGHTBLUE}go tar:compress ${LIGHTGREEN}X${GRAY} : Compress X file/directory using tar with progress indicator - ${LIGHTGREEN}X = File or directory\n"
     printf "${LIGHTBLUE}go tar:extract ${LIGHTGREEN}X${GRAY} : Extract tar file to current folder - ${LIGHTGREEN}X = Tar file to extract\n"
-    printf "${LIGHTBLUE}go wifipw${GRAY} : Determine SSID & Password\n"
+    printf "${LIGHTBLUE}go getwifipw${GRAY} : Determine SSID & Password\n"
     printf "${LIGHTBLUE}go spacedock${GRAY} : Create Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
@@ -251,7 +251,7 @@ elif [ "$function" == "list:general" ]; then
     printf "${LIGHTBLUE}go gzip:extract ${LIGHTGREEN}X${GRAY} : Extract Gzip file to current folder - ${LIGHTGREEN}X = Gzip file to extract\n"
     printf "${LIGHTBLUE}go tar:compress ${LIGHTGREEN}X${GRAY} : Compress X file/directory using tar with progress indicator - ${LIGHTGREEN}X = File or directory\n"
     printf "${LIGHTBLUE}go tar:extract ${LIGHTGREEN}X${GRAY} : Extract tar file to current folder - ${LIGHTGREEN}X = Tar file to extract\n"
-    printf "${LIGHTBLUE}go wifipw${GRAY} : Determine SSID & Password\n"
+    printf "${LIGHTBLUE}go getwifipw${GRAY} : Determine SSID & Password\n"
     printf "${LIGHTBLUE}go spacedock${GRAY} : Create Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
@@ -775,6 +775,12 @@ brew install speedtest-cli
 # mackup
 brew install mackup
 
+# StormSSH
+brew install stormssh
+
+# wget
+brew install wget
+
 # Caffiene
 brew cask install caffeine
 
@@ -1071,7 +1077,7 @@ elif [ "$function" == "search:replace" ]; then
   fi
 
 # Determine SSID & Password
-elif [ "$function" == "getwifi" ]; then
+elif [ "$function" == "getwifipw" ]; then
   echo "Obtaining WiFi Password...\n"
    SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'`
    SSIDPW=`security find-generic-password -wa $SSID`
@@ -1661,8 +1667,8 @@ elif [ "$function" == "git:size" ]; then
 #--------------------------------------------------------------------
 
 else
-  echo "\nCommand not found: "
-  echo "$function"
-  echo "\nParameters: "
-  echo "$allParameters"
+  printf "\nCommand not found: "
+  printf "$function"
+  printf "\nParameters: "
+  printf "$allParameters"
 fi
