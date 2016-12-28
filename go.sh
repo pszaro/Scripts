@@ -171,8 +171,6 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go memory${GRAY} : See memory usage sorted by memory consumption \n"
     printf "${LIGHTBLUE}go trash:empty${GRAY} : Empty trash\n"
     printf "${LIGHTBLUE}go trash:size${GRAY} : Calculate trash size\n"
-    printf "${LIGHTBLUE}go desktop:cleanup${GRAY} : Remove all files and directories from the Desktop directory\n"
-    printf "${LIGHTBLUE}go downloads:cleanup${GRAY} : Remove all files and directories from the Downloads directory\n"
 
 
     printf "\n\n${WHITEBOLD}iTerm / Terminal Utilities: (go list:terminal) \n"
@@ -325,8 +323,6 @@ elif [ "$function" == "list:performance" ]; then
     printf "${LIGHTBLUE}go memory${GRAY} : See memory usage sorted by memory consumption \n"
     printf "${LIGHTBLUE}go trash:empty${GRAY} : Empty trash\n"
     printf "${LIGHTBLUE}go trash:size${GRAY} : Calculate trash size\n"
-    printf "${LIGHTBLUE}go desktop:cleanup${GRAY} : Remove all files and directories from the Desktop directory\n"
-    printf "${LIGHTBLUE}go downloads:cleanup${GRAY} : Remove all files and directories from the Downloads directory\n"
 
 #--------------------------------------------------------------------
 # go script commands list - terminal commands
@@ -1484,38 +1480,6 @@ elif [ "$function" == "trash:size" ]; then
   printf "${GREEN}du -sh ~/.Trash/ \n\n${NC}"
   echo "Trash size: \n"
   du -sh ~/.Trash/
-
-# Remove all files and directories from Desktop directory
-elif [ "$function" == "desktop:cleanup" ]; then
-  printf "${GREEN}du -sh ~/.Trash/ \n\n${NC}"
-  echo "These are the files and directories that are currently located on Desktop: \n"
-  ls -lat ~/Desktop/
-  echo "\n=============================================\n"
-  read -r -p "Do you want to remove all the content from the Desktop directory? (Yes / No)" response
-    case $response in
-        [yY][eE][sS]|[yY])
-            rm -rf ~/Desktop/*
-            ;;
-        *)
-            exit
-            ;;
-    esac
-
-# Remove all files and directories from Downloads directory
-elif [ "$function" == "downloads:cleanup" ]; then
-  printf "${GREEN}du -sh ~/.Trash/ \n\n${NC}"
-  echo "These are the files and directories that are currently located on Downloads: \n"
-  ls -lat ~/Downloads/
-  echo "\n=============================================\n"
-  read -r -p "Do you want to remove all the content from the Downloads directory? (Yes / No)" response
-    case $response in
-        [yY][eE][sS]|[yY])
-            rm -rf ~/Downloads/*
-            ;;
-        *)
-            exit
-            ;;
-    esac
 
 #--------------------------------------------------------------------
 # iTerm Utilities
