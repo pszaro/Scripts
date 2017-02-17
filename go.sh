@@ -93,7 +93,7 @@ fi
 
 if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; then
 
-    printf "\n${WHITEBOLD}Setup & Config: (go list:setup) \n"
+    printf "\n\n${WHITEBOLD}Setup & Config: (go list:setup) \n"
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
     printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
     printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
@@ -104,7 +104,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
 
 
-    printf "\n${WHITEBOLD}General Utilities: (go list:general) \n"
+    printf "\n\n${WHITEBOLD}General Utilities: (go list:general) \n"
     printf "${LIGHTBLUE}go lock${GRAY} : Lock\n"
     printf "${LIGHTBLUE}go restart${GRAY} : Restart OS X\n"
     printf "${LIGHTBLUE}go sleep${GRAY} : Sleep mode\n"
@@ -133,6 +133,13 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go spacedock${GRAY} : Create Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
+
+
+    printf "\n\n${WHITEBOLD}Time Machine: (go list:tm) \n"
+    printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
+    printf "${LIGHTBLUE}go tmlist${GRAY} : Display Full List of Time Machine Backups\n"
 
 
     printf "\n\n${WHITEBOLD}Search Utilities: (go list:search) \n"
@@ -205,7 +212,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
 
 elif [ "$function" == "list:setup" ]; then
 
-    printf "\n${WHITEBOLD}Setup & Config: \n"
+    printf "\n\n${WHITEBOLD}Setup & Config: \n"
 
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
     printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
@@ -216,13 +223,14 @@ elif [ "$function" == "list:setup" ]; then
     printf "${LIGHTBLUE}go install:software${GRAY} : Install necessary software\n"
     printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
 
+
 #--------------------------------------------------------------------
 # go script commands list - general commands
 #--------------------------------------------------------------------
 
 elif [ "$function" == "list:general" ]; then
 
-    printf "\n${WHITEBOLD}General Utilities: \n"
+    printf "\n\n${WHITEBOLD}General Utilities: \n"
 
     printf "${LIGHTBLUE}go lock${GRAY} : Lock\n"
     printf "${LIGHTBLUE}go restart${GRAY} : Restart OS X\n"
@@ -253,6 +261,28 @@ elif [ "$function" == "list:general" ]; then
     printf "${LIGHTBLUE}go spacedock${GRAY} : Create Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
+    printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
+    printf "${LIGHTBLUE}go tmlist${GRAY} : Display Full List of Time Machine Backups\n"
+    
+    
+#--------------------------------------------------------------------
+# go script commands list - time machine
+#--------------------------------------------------------------------
+
+elif [ "$function" == "list:tm" ]; then
+    
+    printf "\n\n${WHITEBOLD}Time Machine: (go list:tm) \n"
+
+    printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
+    printf "${LIGHTBLUE}go tmlist${GRAY} : Display Full List of Time Machine Backups\n"
+
+    echo
+    [ -d /Volumes/MobileBackups ] && printf "***FYI*** Local Time Machine Snapshots Exist (/Volumes/MobileBackups)\n"
+
 
 #--------------------------------------------------------------------
 # go script commands list - search commands
@@ -265,6 +295,7 @@ elif [ "$function" == "list:search" ]; then
     printf "${LIGHTBLUE}go find:recent ${LIGHTGREEN}X${GRAY} : Find files modified in the last N minutes - ${LIGHTGREEN}X = number of minutes \n"
     printf "${LIGHTBLUE}go find:duplicated ${GRAY} : Find duplicated files\n"
     printf "${LIGHTBLUE}go search:replace ${LIGHTGREEN}X${GRAY} : Search and replace string in file - ${LIGHTGREEN}X = File to perform the search and replace operation\n"
+
 
 #--------------------------------------------------------------------
 # go script commands list - network commands
@@ -298,6 +329,7 @@ elif [ "$function" == "list:ssh" ]; then
     printf "${LIGHTBLUE}go ssh:public-key${GRAY} : Copy SSH Public Key \n"
     printf "${LIGHTBLUE}go ssh:list ${LIGHTGREEN}X${GRAY} : List all the saved SSH credentials \n"
 
+
 #--------------------------------------------------------------------
 # go script commands list - web development commands
 #--------------------------------------------------------------------
@@ -310,6 +342,7 @@ elif [ "$function" == "list:dev" ]; then
     printf "${LIGHTBLUE}go compass:compile ${LIGHTGREEN}X${GRAY} : Compile current folder using compass"
     printf "${LIGHTBLUE}go dev:optimize-images${GRAY} : Optimize all images in current directory and subdirectories \n"
     printf "${LIGHTBLUE}go dev:css:convert-to-scss${GRAY} : Convert CSS file to SCSS \n"
+
 
 #--------------------------------------------------------------------
 # go script commands list - performance commands
@@ -324,6 +357,7 @@ elif [ "$function" == "list:performance" ]; then
     printf "${LIGHTBLUE}go trash:empty${GRAY} : Empty trash\n"
     printf "${LIGHTBLUE}go trash:size${GRAY} : Calculate trash size\n"
 
+
 #--------------------------------------------------------------------
 # go script commands list - terminal commands
 #--------------------------------------------------------------------
@@ -333,6 +367,7 @@ elif [ "$function" == "list:terminal" ]; then
     printf "\n\n${WHITEBOLD}iTerm / Terminal Utilities: \n"
     
     printf "${LIGHTBLUE}go iterm:tab-title${GRAY} : Set title to current iTerm tab \n"
+
 
 #--------------------------------------------------------------------
 # go script commands list - GIT commands
@@ -1107,6 +1142,31 @@ elif [ "$function" == "airplane-mode:off" ]; then
    # networksetup -setairportpower en0 on
    # networksetup -setairportpower en1 on
    # launchctl load -wF /System/Library/LaunchDaemons/com.apple.blued.plist # Switch bluetooth on
+
+
+#--------------------------------------------------------------------
+# Time Machine
+#--------------------------------------------------------------------
+
+# Enable Local Time Machine Backups
+elif [ "$function" == "tmenable" ]; then
+  echo "Enabling Local Time Machine Backups...\n"
+  sudo tmutil enablelocal
+
+# Disable Local Time Machine Backups
+elif [ "$function" == "tmdisable" ]; then
+  echo "Disable Local Time Machine Backups...\n"
+  sudo tmutil disablelocal
+
+# Display Latest Time Machine Backup
+elif [ "$function" == "tmlatest" ]; then
+  echo "Displaying Latest Time Machine Backup...\n"
+   tmutil latestbackup | awk -F '/' '{print $6}'
+
+# Display Full List Of Time Machine Backups
+elif [ "$function" == "tmlist" ]; then
+  echo "Displaying Full List of Time Machine Backups...\n"
+   tmutil listbackups
 
 #--------------------------------------------------------------------
 # Search Utilities
