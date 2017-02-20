@@ -13,9 +13,6 @@ List of Scripts
   - [GenReadMe.sh]:
    This script generates a dynamic README file.
 
-  - [Pfizer-Generate-Year-Review.sh]:
-   Scraps Year Daily Logs For Pfizer and create one log for the year
-
   - [aws_gather_list_of_files_S3.sh]:
    Connects to Amazon S3 and gathers list of all files in all buckets
 
