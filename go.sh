@@ -550,6 +550,9 @@ printf "Mouse - Smooth Scrolling - Useful if you’re on an older Mac that messe
 # Enable (Default)
 defaults write -g NSScrollAnimationEnabled -bool true
 
+printf "Scrollbar Visibility - Possible values: WhenScrolling, Automatic and Always.\n"
+defaults write -g AppleShowScrollBars -string "Always"
+
 printf "Trackpad - Map bottom right corner to right-click\n"
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
