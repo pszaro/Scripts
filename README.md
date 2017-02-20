@@ -19,6 +19,9 @@ List of Scripts
   - [aws_gather_list_of_files_S3.sh]:
    Connects to Amazon S3 and gathers list of all files in all buckets
 
+  - [battery_power_check.sh]:
+   Script monitors battery percentage
+
   - [check_mounted_volumes.sh]:
    Check and alert if certain Volumes are mounted
 
@@ -39,9 +42,6 @@ List of Scripts
 
   - [parse-superduper-logs.sh]:
    Check SuperDuper!'s logs and send a push notification to show me what happened with them.
-
-  - [pip_upgrade.sh]:
-   Upgrade all outdated python modules.
 
   - [rtm-post.sh]:
    Ability to add a task to Remember The Milk (RTM) service
