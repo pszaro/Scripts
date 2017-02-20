@@ -85,6 +85,9 @@ fi
 
 # End of Xcode command line tools check/install
 
+#Remove All Unavailable Simulators
+xcrun simctl delete unavailable
+
 }
 
 #--------------------------------------------------------------------
@@ -541,6 +544,12 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 printf "Keyboard - Disable press-and-hold for keys in favor of key repeat\n"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
+printf "Mouse - Smooth Scrolling - Useful if you’re on an older Mac that messes up the animation.\n"
+# Disable
+#defaults write -g NSScrollAnimationEnabled -bool false
+# Enable (Default)
+defaults write -g NSScrollAnimationEnabled -bool true
+
 printf "Trackpad - Map bottom right corner to right-click\n"
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
@@ -571,6 +580,10 @@ printf "Menu Bar - Show only Bluetooth and Airport\n"
 #      "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
 #        "/System/Library/CoreServices/Menu Extras/AirPort.menu"
 
+printf "Dock - Add a Stack with Recent Applications\n"
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }' && \
+killall Dock
+
 printf "Dock - Remove all default app icons\n"
 #  defaults write com.apple.dock persistent-apps -array
 
@@ -593,7 +606,7 @@ printf "Finder - Show the /Volumes folder\n"
 chflags nohidden /Volumes
 
 printf "Finder - Show hidden files\n"
-#  defaults write com.apple.finder AppleShowAllFiles -bool true
+  defaults write com.apple.finder AppleShowAllFiles -bool true
 
 printf "Finder - Show filename extensions\n"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -683,6 +696,10 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 printf "Time Machine - Prevent prompting to use new hard drives as backup volume\n"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+printf "Time Machine - Change Backup Interval. The integer value is the time in seconds.\n"
+# Needs to be investigated:
+sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartInterval -int 10800
 
 printf "Printer - Expand print panel by default\n"
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
