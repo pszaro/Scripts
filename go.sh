@@ -759,6 +759,9 @@ elif [ "$function" == "install:brewpip" ]; then
 # Homebrew
 #
 
+# If older ctags version exists, delete file
+[ -f /usr/local/bin/ctags ] && rm '/usr/local/bin/ctags'
+
 if ! command -v brew > /dev/null; then
   ruby -e "$(curl --location --fail --silent --show-error https://raw.githubusercontent.com/Homebrew/install/master/install)"
   export PATH="/usr/local/bin:$PATH"
@@ -769,7 +772,6 @@ fi
 brew analytics off
 
 # ctags
-[ -f /usr/local/bin/ctags ] && rm '/usr/local/bin/ctags'
 brew install ctags
 
 # Readline
