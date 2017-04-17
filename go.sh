@@ -97,14 +97,14 @@ xcrun simctl delete unavailable
 if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; then
 
     printf "\n\n${WHITEBOLD}Setup & Config: (go list:setup) \n"
+    printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
-    printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
-    printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
     printf "${LIGHTBLUE}go install:brewpip${GRAY} : Install ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go remove:brewpip${GRAY} : Remove ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go update:brewpip${GRAY} : Update ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go install:software${GRAY} : Install necessary software\n"
-    printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
+    printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
+    printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
 
 
     printf "\n\n${WHITEBOLD}General Utilities: (go list:general) \n"
@@ -217,14 +217,14 @@ elif [ "$function" == "list:setup" ]; then
 
     printf "\n\n${WHITEBOLD}Setup & Config: \n"
 
+    printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
-    printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
-    printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
     printf "${LIGHTBLUE}go install:brewpip${GRAY} : Install ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go remove:brewpip${GRAY} : Remove ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go update:brewpip${GRAY} : Update ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go install:software${GRAY} : Install necessary software\n"
-    printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
+    printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
+    printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
 
 
 #--------------------------------------------------------------------
