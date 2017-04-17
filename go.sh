@@ -768,6 +768,10 @@ fi
 # According to Homebrew's Anonymous Aggregate User Behaviour Analytics, Homebrew gathers anonymous aggregate user behaviour analytics and reporting these to Google Analytics. To opt out of Homebrew's analytics:
 brew analytics off
 
+# ctags
+[ -f /usr/local/bin/ctags ] && rm '/usr/local/bin/ctags'
+brew install ctags
+
 # Readline
 brew install readline
 
