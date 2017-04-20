@@ -761,7 +761,7 @@ elif [ "$function" == "install:ctags" ]; then
     cd ~/Downloads/ctags-5.8
     ./configure
     make
-    make install
+    sudo make install
   fi
 
 elif [ "$function" == "install:brewpip" ]; then
