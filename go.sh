@@ -99,6 +99,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "\n\n${WHITEBOLD}Setup & Config: (go list:setup) \n"
     printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
+    printf "${LIGHTBLUE}go install:ctags${GRAY} : Install ctags 5.8\n"
     printf "${LIGHTBLUE}go install:brewpip${GRAY} : Install ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go remove:brewpip${GRAY} : Remove ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go update:brewpip${GRAY} : Update ALL Homebrew & PIP software\n"
@@ -219,6 +220,7 @@ elif [ "$function" == "list:setup" ]; then
 
     printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
+    printf "${LIGHTBLUE}go install:ctags${GRAY} : Install ctags 5.8\n"
     printf "${LIGHTBLUE}go install:brewpip${GRAY} : Install ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go remove:brewpip${GRAY} : Remove ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go update:brewpip${GRAY} : Update ALL Homebrew & PIP software\n"
@@ -750,6 +752,17 @@ bash applecallhome.sh fixmacos
 
 elif [ "$function" == "enable:callhome" ]; then
 bash applecallhome.sh restore
+
+elif [ "$function" == "install:ctags" ]; then
+  if [ ! -d ~/Downloads/ctags-5.8 ]; then
+    cd download 
+    curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+    tar xzvf ctags-5.8.tar.gz
+    cd ctags-5.8
+    ./configure
+    make
+    make install
+  fi
 
 elif [ "$function" == "install:brewpip" ]; then
 
