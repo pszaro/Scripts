@@ -755,7 +755,7 @@ bash applecallhome.sh restore
 
 elif [ "$function" == "install:ctags" ]; then
   if [ ! -d ~/Downloads/ctags-5.8 ]; then
-    cd ~/Downlods
+    cd ~/Downloads
     curl -O http://peterszaro.com/ctags-5.8.tar.gz
     tar xzvf ctags-5.8.tar.gz
     cd ~/Downloads/ctags-5.8
