@@ -869,6 +869,9 @@ pip install awscli
 # glances (https://nicolargo.github.io/glances/)
 pip install glances
 
+# Ansible
+pip install ansible
+
 elif [ "$function" == "remove:brewpip" ]; then
   echo "Discovering brew packages installed and will remove..."
   for p in `brew list`; do brew remove $p; done
