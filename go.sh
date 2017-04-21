@@ -1618,7 +1618,7 @@ elif [ "$function" == "getmygit" ]; then
      echo
      echo
   fi
-  [[ -! -d ~/git-repos ]] && mkdir ~/git-repos
+  [[ ! -d ~/git-repos ]] && mkdir ~/git-repos
   if [[ -d ~/git-repos/mac-setup-playbook ]]; then
     echo
     echo "Looks like my mac-setup-playbook GIT repo is installed...."
