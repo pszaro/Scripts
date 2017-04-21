@@ -1618,6 +1618,18 @@ elif [ "$function" == "getmygit" ]; then
      echo
      echo
   fi
+  [[ -! -d ~/git-repos ]] && mkdir ~/git-repos
+  if [[ -d ~/git-repos/mac-setup-playbook ]]; then
+    echo
+    echo "Looks like my mac-setup-playbook GIT repo is installed...."
+    echo
+  else
+    git clone "git://github.com/pszaro/mac-setup-playbook.git"
+    mv mac-setup-playbook ~/git-repos/
+    if [ $? = 0 ]; then
+      echo "Git Repo mac-setup-playbook moved to ~/git-repos/mac-setup-playbook"
+    fi
+  fi
 
 # Display local Git configuration
 elif [ "$function" == "git:config" ]; then
