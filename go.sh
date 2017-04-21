@@ -851,6 +851,9 @@ brew install stormssh
 # wget
 brew install wget
 
+# dockutil
+brew install dockutil
+
 # Caffiene
 brew cask install caffeine
 
