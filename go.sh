@@ -784,6 +784,9 @@ fi
 # According to Homebrew's Anonymous Aggregate User Behaviour Analytics, Homebrew gathers anonymous aggregate user behaviour analytics and reporting these to Google Analytics. To opt out of Homebrew's analytics:
 brew analytics off
 
+# mas
+brew install mas
+
 # ctags
 brew install ctags
 
