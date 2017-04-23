@@ -1,7 +1,8 @@
 #!/bin/bash
 #
-# Description: bootstrap script to initial multiple installs and updates using go
+# Description: bootstrap script to initial multiple installs and updates using go on a clean macOS install
 #
+# curl -O https://raw.githubusercontent.com/pszaro/Scripts/master/bootstrap.sh
 #
 
 set -e
