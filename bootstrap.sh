@@ -53,7 +53,7 @@ echo
 ./go.sh install:ctags
 
 echo
-echo -=[ Installing brew & pip applications ... ]=-
+echo -=[ Installing brew-pip applications ... ]=-
 echo
 ./go.sh install:brewpip
 
