@@ -27,16 +27,17 @@ if [[ ! -x /usr/bin/gcc ]]; then
 fi
 
 git clone http://github.com/pszaro/Scripts.git
-cd Scripts
+cd ~/Scripts
 ./go.sh getmygit
-cd ../dotfiles
-./run.sh i
 ./go.sh update
 ./go.sh defaults
 ./go.sh install:ctags
 ./go.sh install:brewpip
 ./go.sh install:software
 ./go.sh enable:callhome
+
+cd ~/dotfiles
+./run.sh i
 
 cd ~/github-repos/mac-setup-playbook
 ansible-playbook -i inventory --ask-become-pass main.yml
