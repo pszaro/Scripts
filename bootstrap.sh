@@ -38,7 +38,7 @@ echo
 ./go.sh getmygit
 
 echo
-echo -=[ Check and Install for macOS updates ... ]=-
+echo -=[ Check and Install macOS updates ... ]=-
 echo
 ./go.sh update
 
