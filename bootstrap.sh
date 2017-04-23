@@ -26,20 +26,57 @@ if [[ ! -x /usr/bin/gcc ]]; then
     xcode-select --install
 fi
 
+echo
+echo -=[ Clone my Scripts git repo ... ]=-
+echo
 git clone http://github.com/pszaro/Scripts.git
 cd ~/Scripts
+
+echo
+echo -=[ Clone all my git repos ... ]=-
+echo
 ./go.sh getmygit
+
+echo
+echo -=[ Check and Install for macOS updates ... ]=-
+echo
 ./go.sh update
+
+echo
+echo -=[ Setting macOS personal defaults ... ]=-
+echo
 ./go.sh defaults
+
+echo
+echo -=[ Installing newer ctags ... ]=-
+echo
 ./go.sh install:ctags
+
+echo
+echo -=[ Installing brew & pip applications ... ]=-
+echo
 ./go.sh install:brewpip
+
+echo
+echo -=[ Installing 3rd Party software ... ]=-
+echo
 ./go.sh install:software
+
+echo
+echo -=[ Disabling Apple callhome... ]=-
+echo
 ./go.sh enable:callhome
 
+echo
+echo -=[ Executing dotfiles... ]=-
+echo
 cd ~/dotfiles
 ./run.sh i
 
-cd ~/github-repos/mac-setup-playbook
+echo
+echo -=[ Executing Ansible mac-setup-playbook... ]=-
+echo
+cd ~/git-repos/mac-setup-playbook
 ansible-playbook -i inventory --ask-become-pass main.yml
 
 
