@@ -19,7 +19,7 @@ if [[ ! -x /usr/bin/gcc ]]; then
 fi
 
 git clone http://github.com/pszaro/Scripts.git
-cd scripts
+cd Scripts
 ./go.sh getmygit
 cd ../dotfiles
 ./run.sh i
