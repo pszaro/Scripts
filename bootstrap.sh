@@ -14,7 +14,7 @@ echo
 
 # Download and install Command Line Tools
 if [[ ! -x /usr/bin/gcc ]]; then
-    echo "Info   | Install   | xcode"
+    echo "xcode not found, install..."
     xcode-select --install
 fi
 
@@ -29,6 +29,9 @@ cd ../dotfiles
 ./go.sh install:brewpip
 ./go.sh install:software
 ./go.sh enable:callhome
+
+cd ~/github-repos/mac-setup-playbook
+ansible-playbook -i inventory --ask-become-pass main.yml
 
 
 
