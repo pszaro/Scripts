@@ -106,6 +106,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go install:software${GRAY} : Install necessary software\n"
     printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
     printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
+    printf "${LIGHTBLUE}go refresh:hosts${GRAY} : Refresh /etc/hosts file \n" 
 
 
     printf "\n\n${WHITEBOLD}General Utilities: (go list:general) \n"
@@ -227,6 +228,7 @@ elif [ "$function" == "list:setup" ]; then
     printf "${LIGHTBLUE}go install:software${GRAY} : Install necessary software\n"
     printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
     printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
+    printf "${LIGHTBLUE}go refresh:hosts${GRAY} : Refresh /etc/hosts file \n" 
 
 
 #--------------------------------------------------------------------
@@ -752,6 +754,17 @@ bash applecallhome.sh fixmacos
 
 elif [ "$function" == "enable:callhome" ]; then
 bash applecallhome.sh restore
+
+elif [ "$function" == "refresh:hosts" ]; then
+echo "Making copy of current /etc/hosts to /etc/hosts.${datestamp}"
+sudo cp -p /etc/hosts /etc/hosts.${datestamp}
+echo "Copying down updated raw list hosts file (Must have connection to internet)...\n"
+curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee /etc/hosts
+sleep 3
+echo "Refreshing local DNS"
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder 
+echo "DNS cache cleared"
 
 elif [ "$function" == "install:ctags" ]; then
   if [ ! -d ~/Downloads/ctags-5.8 ]; then
