@@ -96,7 +96,7 @@ xcrun simctl delete unavailable
 
 if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; then
 
-    printf "\n\n${WHITEBOLD}Setup & Config: (go list:setup) \n"
+    printf "\n${WHITEBOLD}Setup & Config: (go list:setup) \n"
     printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
     printf "${LIGHTBLUE}go install:ctags${GRAY} : Install ctags 5.8\n"
@@ -109,7 +109,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go refresh:hosts${GRAY} : Refresh /etc/hosts file \n" 
 
 
-    printf "\n\n${WHITEBOLD}General Utilities: (go list:general) \n"
+    printf "\n${WHITEBOLD}General Utilities: (go list:general) \n"
     printf "${LIGHTBLUE}go lock${GRAY} : Lock\n"
     printf "${LIGHTBLUE}go restart${GRAY} : Restart OS X\n"
     printf "${LIGHTBLUE}go sleep${GRAY} : Sleep mode\n"
@@ -140,19 +140,19 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
 
 
-    printf "\n\n${WHITEBOLD}Time Machine: (go list:tm) \n"
+    printf "\n${WHITEBOLD}Time Machine: (go list:tm) \n"
     printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
     printf "${LIGHTBLUE}go tmlist${GRAY} : Display Full List of Time Machine Backups\n"
 
 
-    printf "\n\n${WHITEBOLD}Search Utilities: (go list:search) \n"
+    printf "\n${WHITEBOLD}Search Utilities: (go list:search) \n"
     printf "${LIGHTBLUE}go find:recent ${LIGHTGREEN}X${GRAY} : Find files modified in the last N minutes - ${LIGHTGREEN}X = number of minutes \n"
     printf "${LIGHTBLUE}go search:replace ${LIGHTGREEN}X${GRAY} : Search and replace string in file - ${LIGHTGREEN}X = File to perform the search and replace operation\n"
 
 
-    printf "\n\n${WHITEBOLD}Network Utilities: (go list:network) \n"
+    printf "\n${WHITEBOLD}Network Utilities: (go list:network) \n"
     printf "${LIGHTBLUE}go speedtest${GRAY} : Internet connection speed test \n"
     printf "${LIGHTBLUE}go ports${GRAY} : List of used ports \n"
     printf "${LIGHTBLUE}go ip:local${GRAY} : Get local IP address \n"
@@ -160,7 +160,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go ip:mac${GRAY} : Get MAC Address \n"
 
 
-    printf "\n\n${WHITEBOLD}SSH Utilities: (go list:ssh) \n"
+    printf "\n${WHITEBOLD}SSH Utilities: (go list:ssh) \n"
     printf "${LIGHTBLUE}go ssh:download-file ${LIGHTGREEN}X${GRAY} : Download file from remote server through SSH - X = Path of the remote file to download \n"
     printf "${LIGHTBLUE}go ssh:download-folder ${LIGHTGREEN}X${GRAY} : Download entire folder from remote server through SSH - X = Path of the remote folder to download \n"
     printf "${LIGHTBLUE}go ssh:download-database ${LIGHTGREEN}X${GRAY} : Download database from remote server through SSH - X = Name of the database to download \n"
@@ -171,25 +171,25 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go ssh:list ${LIGHTGREEN}X${GRAY} : List all the saved SSH credentials \n"
 
 
-    printf "\n\n${WHITEBOLD}Web Development Utilities: (go list:dev) \n"
+    printf "\n${WHITEBOLD}Web Development Utilities: (go list:dev) \n"
     printf "${LIGHTBLUE}go dev:monitor ${LIGHTGREEN}X${GRAY} : Monitor file changes (for example: log file) - X = File to monitor \n"
     printf "${LIGHTBLUE}go dev:compass:compile ${LIGHTGREEN}X${GRAY} : Compile current folder using compass \n"
     printf "${LIGHTBLUE}go dev:optimize-images${GRAY} : Optimize all images in current directory and subdirectories \n"
     printf "${LIGHTBLUE}go dev:css:convert-to-scss${GRAY} : Convert CSS file to SCSS \n"
 
 
-    printf "\n\n${WHITEBOLD}Performance and maintenance Utilities: (go list:performance) \n"
+    printf "\n${WHITEBOLD}Performance and maintenance Utilities: (go list:performance) \n"
     printf "${LIGHTBLUE}go system${GRAY} : Show system information to review go performance \n"
     printf "${LIGHTBLUE}go memory${GRAY} : See memory usage sorted by memory consumption \n"
     printf "${LIGHTBLUE}go trash:empty${GRAY} : Empty trash\n"
     printf "${LIGHTBLUE}go trash:size${GRAY} : Calculate trash size\n"
 
 
-    printf "\n\n${WHITEBOLD}iTerm / Terminal Utilities: (go list:terminal) \n"
+    printf "\n${WHITEBOLD}iTerm / Terminal Utilities: (go list:terminal) \n"
     printf "${LIGHTBLUE}go iterm:tab-title${GRAY} : Set title to current iTerm tab \n"
 
 
-    printf "\n\n${WHITEBOLD}GIT Utilities: (go list:git) \n"
+    printf "\n${WHITEBOLD}GIT Utilities: (go list:git) \n"
     printf "${LIGHTBLUE}go getmygit${GRAY} : Install my git repos (if not installed) \n"
     printf "${LIGHTBLUE}go git:config${GRAY} : Display local Git configuration \n"
     printf "${LIGHTBLUE}go git:open${GRAY} : Open current repository on Github \n"
@@ -207,7 +207,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go git:size${GRAY} : Get size for current GIT repository \n"
 
 
-    printf "\n\n${WHITEBOLD}Web Utilities: (go list:web) \n"
+    printf "\n${WHITEBOLD}Web Utilities: (go list:web) \n"
     printf "${LIGHTBLUE}go web:download-images${GRAY} : Download all images from website to current directory \n"
 
 
@@ -217,7 +217,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
 
 elif [ "$function" == "list:setup" ]; then
 
-    printf "\n\n${WHITEBOLD}Setup & Config: \n"
+    printf "\n${WHITEBOLD}Setup & Config: \n"
 
     printf "${LIGHTBLUE}go update${GRAY} : Install OS X software updates\n"
     printf "${LIGHTBLUE}go defaults${GRAY} : Apply default system settings\n"
@@ -280,7 +280,7 @@ elif [ "$function" == "list:general" ]; then
 
 elif [ "$function" == "list:tm" ]; then
     
-    printf "\n\n${WHITEBOLD}Time Machine: (go list:tm) \n"
+    printf "\n${WHITEBOLD}Time Machine: (go list:tm) \n"
 
     printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
@@ -297,7 +297,7 @@ elif [ "$function" == "list:tm" ]; then
 
 elif [ "$function" == "list:search" ]; then
 
-    printf "\n\n${WHITEBOLD}Search Utilities: \n"
+    printf "\n${WHITEBOLD}Search Utilities: \n"
     
     printf "${LIGHTBLUE}go find:recent ${LIGHTGREEN}X${GRAY} : Find files modified in the last N minutes - ${LIGHTGREEN}X = number of minutes \n"
     printf "${LIGHTBLUE}go find:duplicated ${GRAY} : Find duplicated files\n"
@@ -310,7 +310,7 @@ elif [ "$function" == "list:search" ]; then
 
 elif [ "$function" == "list:network" ]; then
 
-    printf "\n\n${WHITEBOLD}Network Utilities: \n"
+    printf "\n${WHITEBOLD}Network Utilities: \n"
     
     printf "${LIGHTBLUE}go speedtest${GRAY} : Internet connection speed test \n"
     printf "${LIGHTBLUE}go ports${GRAY} : List of used ports \n"
@@ -325,7 +325,7 @@ elif [ "$function" == "list:network" ]; then
 
 elif [ "$function" == "list:ssh" ]; then
 
-    printf "\n\n${WHITEBOLD}SSH Utilities: \n"
+    printf "\n${WHITEBOLD}SSH Utilities: \n"
     
     printf "${LIGHTBLUE}go ssh:download-file ${LIGHTGREEN}X${GRAY} : Download file from remote server through SSH - X = Path of the remote file to download \n"
     printf "${LIGHTBLUE}go ssh:download-folder ${LIGHTGREEN}X${GRAY} : Download entire folder from remote server through SSH - X = Path of the remote folder to download \n"
@@ -343,7 +343,7 @@ elif [ "$function" == "list:ssh" ]; then
 
 elif [ "$function" == "list:dev" ]; then
 
-    printf "\n\n${WHITEBOLD}Web Development Utilities: \n"
+    printf "\n${WHITEBOLD}Web Development Utilities: \n"
     
     printf "${LIGHTBLUE}go monitor ${LIGHTGREEN}X${GRAY} : Monitor file changes (for example: log file) - X = File to monitor \n"
     printf "${LIGHTBLUE}go compass:compile ${LIGHTGREEN}X${GRAY} : Compile current folder using compass"
@@ -357,7 +357,7 @@ elif [ "$function" == "list:dev" ]; then
 
 elif [ "$function" == "list:performance" ]; then
 
-    printf "\n\n${WHITEBOLD}Performance and maintenance Utilities: \n"
+    printf "\n${WHITEBOLD}Performance and maintenance Utilities: \n"
     
     printf "${LIGHTBLUE}go system${GRAY} : Show system information to review go performance \n"
     printf "${LIGHTBLUE}go memory${GRAY} : See memory usage sorted by memory consumption \n"
@@ -371,7 +371,7 @@ elif [ "$function" == "list:performance" ]; then
 
 elif [ "$function" == "list:terminal" ]; then
 
-    printf "\n\n${WHITEBOLD}iTerm / Terminal Utilities: \n"
+    printf "\n${WHITEBOLD}iTerm / Terminal Utilities: \n"
     
     printf "${LIGHTBLUE}go iterm:tab-title${GRAY} : Set title to current iTerm tab \n"
 
@@ -382,7 +382,7 @@ elif [ "$function" == "list:terminal" ]; then
 
 elif [ "$function" == "list:git" ]; then
 
-    printf "\n\n${WHITEBOLD}GIT Utilities: \n"
+    printf "\n${WHITEBOLD}GIT Utilities: \n"
     
     printf "${LIGHTBLUE}go getmygit${GRAY} : Install my git repos (if not installed) \n"
     printf "${LIGHTBLUE}go git:config${GRAY} : Display local Git configuration \n"
@@ -407,7 +407,7 @@ elif [ "$function" == "list:git" ]; then
 
 elif [ "$function" == "list:web" ]; then
 
-    printf "\n\n${WHITEBOLD}Web Utilities: \n"
+    printf "\n${WHITEBOLD}Web Utilities: \n"
     
     printf "${LIGHTBLUE}go web:download-images${GRAY} : Download all images from website to current directory \n"
 
