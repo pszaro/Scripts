@@ -760,7 +760,11 @@ echo "Making copy of current /etc/hosts to /etc/hosts.${datestamp}"
 sudo cp -p /etc/hosts /etc/hosts.${datestamp}
 echo "Copying down updated raw list hosts file (Must have connection to internet)...\n"
 curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee /etc/hosts
-sleep 3
+sleep 1
+echo "Copying in local template entries"
+if [ -f ~/Scripts/hosts.local.template ]; then
+  cat ~/Scripts/hosts.local.template | sudo tee -a /etc/hosts
+fi
 echo "Refreshing local DNS"
 sudo dscacheutil -flushcache
 sudo killall -HUP mDNSResponder 
