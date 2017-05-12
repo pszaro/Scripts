@@ -13,6 +13,8 @@
 # Global Variables
 #--------------------------------------------------------------------
 
+datestamp=`date +"%Y%m%d"`
+
 #--------------------------------------------------------------------
 # Parameters
 #--------------------------------------------------------------------
@@ -418,8 +420,6 @@ elif [ "$function" == "list:web" ]; then
 elif [ "$function" == "defaults" ]; then
 
 # Applies system and application defaults
-
-datestamp=`date +"%Y%m%d"`
 
 # Ask for the administrator password upfront.
 sudo -v
