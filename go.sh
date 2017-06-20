@@ -877,6 +877,9 @@ brew install dockutil
 # known_hosts
 brew install known_hosts
 
+# dsh
+brew install dsh
+
 # Caffiene
 brew cask install caffeine
 
