@@ -874,6 +874,9 @@ brew install wget
 # dockutil
 brew install dockutil
 
+# known_hosts
+brew install known_hosts
+
 # Caffiene
 brew cask install caffeine
 
