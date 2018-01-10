@@ -138,6 +138,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go tar:extract ${LIGHTGREEN}X${GRAY} : Extract tar file to current folder - ${LIGHTGREEN}X = Tar file to extract\n"
     printf "${LIGHTBLUE}go getwifipw${GRAY} : Determine SSID & Password\n"
     printf "${LIGHTBLUE}go spacedock${GRAY} : Create Space In Dock\n"
+    printf "${LIGHTBLUE}go smallspacedock${GRAY} : Create Small Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
 
@@ -268,6 +269,7 @@ elif [ "$function" == "list:general" ]; then
     printf "${LIGHTBLUE}go tar:extract ${LIGHTGREEN}X${GRAY} : Extract tar file to current folder - ${LIGHTGREEN}X = Tar file to extract\n"
     printf "${LIGHTBLUE}go getwifipw${GRAY} : Determine SSID & Password\n"
     printf "${LIGHTBLUE}go spacedock${GRAY} : Create Space In Dock\n"
+    printf "${LIGHTBLUE}go smallspacedock${GRAY} : Create Small Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
     printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
@@ -702,7 +704,7 @@ defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 printf "Time Machine - Prevent prompting to use new hard drives as backup volume\n"
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 printf "Time Machine - Change Backup Interval. The integer value is the time in seconds.\n"
 # Needs to be investigated:
@@ -748,6 +750,10 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom Right screen corner → Show Desktop
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+printf "Google - Uninstall Google Update\n"
+~/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --nuke
+
 
 elif [ "$function" == "disable:callhome" ]; then
 bash applecallhome.sh fixmacos
@@ -893,19 +899,19 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 #
 
 # AWS CLI https://aws.amazon.com/cli/
-pip install awscli
+/usr/local/Cellar/python/2.7.14_1/bin/pip install awscli
 
 # glances (https://nicolargo.github.io/glances/)
-pip install glances
+/usr/local/Cellar/python/2.7.14_1/bin/pip install glances
 
 # Ansible
-pip install ansible
+/usr/local/Cellar/python/2.7.14_1/bin/pip install ansible
 
 elif [ "$function" == "remove:brewpip" ]; then
   echo "Discovering brew packages installed and will remove..."
   for p in `brew list`; do brew remove $p; done
   echo "Discovering pip packages installed and will remove..."
-  for p in `pip list`; do pip uninstall $p; done
+  for p in `/usr/local/Cellar/python/2.7.14_1/bin/pip list`; do /usr/local/Cellar/python/2.7.14_1/bin/pip uninstall $p; done
 
 elif [ "$function" == "update:brewpip" ]; then
   echo "Updating Homebrew and its installed packages..."
@@ -916,7 +922,7 @@ elif [ "$function" == "update:brewpip" ]; then
   echo
   echo "Updating installed pip packages..."
   printf "${GREEN}pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U\n${NC}"
-  pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+  /usr/local/Cellar/python/2.7.14_1/bin/pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 /usr/local/Cellar/python/2.7.14_1/bin/pip install -U
 
 elif [ "$function" == "install:software" ]; then
 
@@ -1188,7 +1194,14 @@ elif [ "$function" == "getwifipw" ]; then
 # Create Space In Dock
 elif [ "$function" == "spacedock" ]; then
   echo "Creating space in dock...\n"
-   defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}' ; killall Dock
+   defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' && \
+   killall Dock
+
+# Create Small Space In Dock
+elif [ "$function" == "smallspacedock" ]; then
+  echo "Creating space in dock...\n"
+   defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}' && \
+   killall Dock
 
 # Turn Indexing Off
 elif [ "$function" == "turnindexingoff" ]; then
