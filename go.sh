@@ -142,6 +142,9 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go smallspacedock${GRAY} : Create Small Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
+    printf "${LIGHTBLUE}go airplane-mode:status${GRAY} : Check Airplane Status\n"
+    printf "${LIGHTBLUE}go airplane-mode:on${GRAY} : Enable Airplane Mode\n"
+    printf "${LIGHTBLUE}go airplane-mode:off${GRAY} : Disable Airplane Mode\n"
 
 
     printf "\n${WHITEBOLD}Time Machine: (go list:tm) \n"
@@ -273,6 +276,9 @@ elif [ "$function" == "list:general" ]; then
     printf "${LIGHTBLUE}go smallspacedock${GRAY} : Create Small Space In Dock\n"
     printf "${LIGHTBLUE}go turnindexingoff${GRAY} : Turn Indexing Off\n"
     printf "${LIGHTBLUE}go turnindexingon${GRAY} : Turn Indexing On\n"
+    printf "${LIGHTBLUE}go airplane-mode:status${GRAY} : Check Airplane Status\n"
+    printf "${LIGHTBLUE}go airplane-mode:on${GRAY} : Enable Airplane Mode\n"
+    printf "${LIGHTBLUE}go airplane-mode:off${GRAY} : Disable Airplane Mode\n"
     printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
@@ -1214,19 +1220,28 @@ elif [ "$function" == "turnindexingon" ]; then
   echo "Turning Spotlight Indexing On...\n"
    sudo mdutil -a -i on
 
-# TODO: Working on airplane mode (disable wi-fi and bluetooth)
+elif [ "$function" == "airplane-mode:status" ]; then
+  echo "Checking WiFi and Bluetooth status...\n"
+  echo
+  echo " WiFi Status: "
+  /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I   
+  echo
+  echo " Bluetooth Status: "
+  defaults read /Library/Preferences/com.apple.Bluetooth ControllerPowerState | awk '{ if($1 != 0) {print "Bluetooth: ON"} else { print "Bluetooth: OFF" }  }'
 elif [ "$function" == "airplane-mode:on" ]; then
   echo "Enabling airplane mode...\n"
-   # networksetup -setairportpower airport off
-   # networksetup -setairportpower en0 off
-   # networksetup -setairportpower en1 off
-   # launchctl unload -w /System/Library/LaunchDaemons/com.apple.blued.plist # Switch bluetooth off
+   networksetup -setairportpower airport off
+   networksetup -setairportpower en0 off
+   networksetup -setairportpower en1 off
+   sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && \
+        sudo killall -HUP blued
 elif [ "$function" == "airplane-mode:off" ]; then
   echo "Disabling airplane mode...\n"
-   # networksetup -setairportpower airport on
-   # networksetup -setairportpower en0 on
-   # networksetup -setairportpower en1 on
-   # launchctl load -wF /System/Library/LaunchDaemons/com.apple.blued.plist # Switch bluetooth on
+   networksetup -setairportpower airport on
+   networksetup -setairportpower en0 on
+   networksetup -setairportpower en1 on
+   sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 1 && \
+        sudo killall -HUP blued
 
 
 #--------------------------------------------------------------------
