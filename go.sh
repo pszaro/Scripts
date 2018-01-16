@@ -14,6 +14,7 @@
 #--------------------------------------------------------------------
 
 datestamp=`date +"%Y%m%d"`
+PIPLOC=/usr/local/Cellar/python/2.7.14_2/bin
 
 #--------------------------------------------------------------------
 # Parameters
@@ -899,19 +900,19 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 #
 
 # AWS CLI https://aws.amazon.com/cli/
-/usr/local/Cellar/python/2.7.14_1/bin/pip install awscli
+${PIPLOC}/pip install awscli
 
 # glances (https://nicolargo.github.io/glances/)
-/usr/local/Cellar/python/2.7.14_1/bin/pip install glances
+${PIPLOC}/pip install glances
 
 # Ansible
-/usr/local/Cellar/python/2.7.14_1/bin/pip install ansible
+${PIPLOC}/pip install ansible
 
 elif [ "$function" == "remove:brewpip" ]; then
   echo "Discovering brew packages installed and will remove..."
   for p in `brew list`; do brew remove $p; done
   echo "Discovering pip packages installed and will remove..."
-  for p in `/usr/local/Cellar/python/2.7.14_1/bin/pip list`; do /usr/local/Cellar/python/2.7.14_1/bin/pip uninstall $p; done
+  for p in `${PIPLOC}/pip list`; do ${PIPLOC}/pip uninstall $p; done
 
 elif [ "$function" == "update:brewpip" ]; then
   echo "Updating Homebrew and its installed packages..."
@@ -922,7 +923,7 @@ elif [ "$function" == "update:brewpip" ]; then
   echo
   echo "Updating installed pip packages..."
   printf "${GREEN}pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U\n${NC}"
-  /usr/local/Cellar/python/2.7.14_1/bin/pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 /usr/local/Cellar/python/2.7.14_1/bin/pip install -U
+  ${PIPLOC}/pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 ${PIPLOC}/pip install -U
 
 elif [ "$function" == "install:software" ]; then
 
