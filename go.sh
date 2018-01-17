@@ -1402,10 +1402,9 @@ elif [ "$function" == "ssh:download-database" ]; then
 
       if [ ! -z "$username" -a "$username" != " " ]; then
 
-                # TODO: Create method to download database through SSH
-                echo ""
-        # printf "${GREEN}scp -r ${GRAY}${username}@${ipaddress}:${firstparameter}${GREEN} .\n\n${NC}"
-        # scp -r $username@$ipaddress:$firstParameter .
+        echo ""
+        printf "${GREEN}scp -r ${GRAY}${username}@${ipaddress}:${firstparameter}${GREEN} .\n\n${NC}"
+        scp -r $username@$ipaddress:$firstParameter .
 
       else
         "Please specify the username for the remote server"
