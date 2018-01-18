@@ -150,6 +150,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "\n${WHITEBOLD}Time Machine: (go list:tm) \n"
     printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmdisablebattery${GRAY} : Disable Local Time Machine Backups While on Battery\n"
     printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
     printf "${LIGHTBLUE}go tmlist${GRAY} : Display Full List of Time Machine Backups\n"
 
@@ -281,6 +282,7 @@ elif [ "$function" == "list:general" ]; then
     printf "${LIGHTBLUE}go airplane-mode:off${GRAY} : Disable Airplane Mode\n"
     printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmdisablebattery${GRAY} : Disable Local Time Machine Backups While on Battery\n"
     printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
     printf "${LIGHTBLUE}go tmlist${GRAY} : Display Full List of Time Machine Backups\n"
     
@@ -295,6 +297,7 @@ elif [ "$function" == "list:tm" ]; then
 
     printf "${LIGHTBLUE}go tmenable${GRAY} : Enable Local Time Machine Backups\n"
     printf "${LIGHTBLUE}go tmdisable${GRAY} : Disable Local Time Machine Backups\n"
+    printf "${LIGHTBLUE}go tmdisablebattery${GRAY} : Disable Local Time Machine Backups While on Battery\n"
     printf "${LIGHTBLUE}go tmlatest${GRAY} : Display Latest Time Machine Backup\n"
     printf "${LIGHTBLUE}go tmlist${GRAY} : Display Full List of Time Machine Backups\n"
 
@@ -1257,6 +1260,11 @@ elif [ "$function" == "tmenable" ]; then
 elif [ "$function" == "tmdisable" ]; then
   echo "Disable Local Time Machine Backups...\n"
   sudo tmutil disablelocal
+
+# Disable Local Time Machine Backups While on Battery
+elif [ "$function" == "tmdisablebattery" ]; then
+  echo "Disable Local Time Machine Backups While on Battery...\n"
+  sudo defaults write /Library/Preferences/com.apple.TimeMachine RequiresACPower -bool true
 
 # Display Latest Time Machine Backup
 elif [ "$function" == "tmlatest" ]; then
