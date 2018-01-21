@@ -957,7 +957,7 @@ elif [ "$function" == "install:software" ]; then
   brew cask install nvalt
   brew cask install bartender
 
-# Install OS X software updates, update installed Ruby gems, Homebrew, npm, pip and their installed packages
+# Install OS X software updates, update installed Ruby gems, Homebrew, pip and their installed packages
 elif [ "$function" == "update" ]; then
    echo "Updating OS X..."
    printf "${GREEN}sudo softwareupdate -i -a;\n${NC}"
