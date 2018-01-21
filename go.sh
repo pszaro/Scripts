@@ -948,7 +948,6 @@ elif [ "$function" == "install:software" ]; then
   brew cask install transmit
   brew cask install divvy
   brew cask install iterm2
-  brew cask install flux
   brew cask install growlnotify
   brew cask install cleanmymac
   brew cask install geektool
