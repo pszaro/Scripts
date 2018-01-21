@@ -956,6 +956,7 @@ elif [ "$function" == "install:software" ]; then
   brew cask install timemachineeditor
   brew cask install nvalt
   brew cask install bartender
+  brew cask install etcher
 
 # Install OS X software updates, update installed Ruby gems, Homebrew, pip and their installed packages
 elif [ "$function" == "update" ]; then
