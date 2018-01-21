@@ -444,7 +444,7 @@ printf "System - Disable boot sound effects\n"
 #sudo nvram SystemAudioVolume=" "
 
 printf "System - Enable boot sound effects\n"
-# Disabled on 2016 MBP models
+# Disabled on 2016 & Later MBP models
 sudo nvram BootAudio=%01
 
 printf "System - Enable Macbook Power Chime with Plugged in\n"
@@ -499,8 +499,8 @@ printf "System - Disable smart dashes (not useful when writing code)\n"
 #defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 printf "System - Require password immediately after sleep or screen saver begins\n"
-#defaults write com.apple.screensaver askForPassword -int 1
-#defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 printf "System - Avoid creating .DS_Store files on network volumes\n"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
