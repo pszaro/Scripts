@@ -23,7 +23,7 @@ if [ "$1" = "add" ]
     echo ; nl $TARGET ; echo
 fi
 
-if [ "$1" = "remove" ]
+if [ "$1" = "remove" ] || [ "$1" = "done" ]
   then
     sed -i.bak -e "$2d" $TARGET
     rm $TARGET.bak
@@ -40,7 +40,7 @@ fi
 
 if [ "$1" = "search" ]
   then
-    grep -IiFnr --directories=recurse "TODO" * | grep -v "todo.sh"| uniq >> $TARGET
+    grep -IFnr --directories=recurse "TODO" * | grep -v "todo.sh"| uniq >> $TARGET
     cat $TARGET | sort -u > $TARGET.bak
     mv $TARGET.bak $TARGET
     echo ; nl $TARGET ; echo
