@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# C: Description: Script created to run often on Mac to scan for any recent trojans being discovered
+# Description: Script created to run often on Mac to scan for any recent trojans being discovered
 #
 # 05/08/2017 - Handbrake: https://forum.handbrake.fr/viewtopic.php?f=33&t=36364
 # 05/20/2018 - mshelper: https://www.imore.com/how-find-and-remove-mshelper-malware-your-mac
