@@ -14,7 +14,7 @@
 #--------------------------------------------------------------------
 
 datestamp=`date +"%Y%m%d"`
-PIPLOC=/usr/local/Cellar/python/2.7.14_2/bin
+PIPLOC=/usr/local/Cellar/python/3.7.3/bin
 
 #--------------------------------------------------------------------
 # Parameters
@@ -218,6 +218,10 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "\n${WHITEBOLD}Web Utilities: (go list:web) \n"
     printf "${LIGHTBLUE}go web:download-images${GRAY} : Download all images from website to current directory \n"
 
+
+    printf "\n${WHITEBOLD}Apple File System Snapshots: (go list:apfs) \n"
+    printf "${LIGHTBLUE}go apfs:list${GRAY} : List Available Local Snapshots \n"
+    printf "${LIGHTBLUE}go apfs:create${GRAY} : Create Local Snapshots \n"
 
 #--------------------------------------------------------------------
 # go script commands list - Setup & Config commands
@@ -424,6 +428,18 @@ elif [ "$function" == "list:web" ]; then
     printf "\n${WHITEBOLD}Web Utilities: \n"
     
     printf "${LIGHTBLUE}go web:download-images${GRAY} : Download all images from website to current directory \n"
+
+
+#--------------------------------------------------------------------
+# go script commands list - apfs commands
+#--------------------------------------------------------------------
+
+elif [ "$function" == "list:apfs" ]; then
+
+    printf "\n${WHITEBOLD}APFS: \n"
+
+    printf "${LIGHTBLUE}go apfs:list${GRAY} : List Available Local Snapshots \n"
+    printf "${LIGHTBLUE}go apfs:create${GRAY} : Create Local Snapshots \n"
 
 
 #--------------------------------------------------------------------
@@ -896,6 +912,9 @@ brew install known_hosts
 # dsh
 brew install dsh
 
+# noti
+brew install noti
+
 # Caffiene
 brew cask install caffeine
 
@@ -909,19 +928,19 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 #
 
 # AWS CLI https://aws.amazon.com/cli/
-${PIPLOC}/pip install awscli
+${PIPLOC}/pip3 install awscli
 
 # glances (https://nicolargo.github.io/glances/)
-${PIPLOC}/pip install glances
+${PIPLOC}/pip3 install glances
 
 # Ansible
-${PIPLOC}/pip install ansible
+${PIPLOC}/pip3 install ansible
 
 elif [ "$function" == "remove:brewpip" ]; then
   echo "Discovering brew packages installed and will remove..."
   for p in `brew list`; do brew remove $p; done
   echo "Discovering pip packages installed and will remove..."
-  for p in `${PIPLOC}/pip list`; do ${PIPLOC}/pip uninstall $p; done
+  for p in `${PIPLOC}/pip3 list`; do ${PIPLOC}/pip3 uninstall $p; done
 
 elif [ "$function" == "update:brewpip" ]; then
   echo "Updating Homebrew and its installed packages..."
@@ -931,8 +950,11 @@ elif [ "$function" == "update:brewpip" ]; then
   sleep 3
   echo
   echo "Updating installed pip packages..."
-  printf "${GREEN}pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U\n${NC}"
-  ${PIPLOC}/pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 ${PIPLOC}/pip install -U
+  #printf "${GREEN}pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U\n${NC}"
+  printf "${GREEN}pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U\n${NC}"
+  #${PIPLOC}/pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 ${PIPLOC}/pip3 install -U
+  pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+  echo
 
 elif [ "$function" == "install:software" ]; then
 
@@ -1806,6 +1828,17 @@ elif [ "$function" == "git:size" ]; then
   printf "\n\nCurrent GIT repository size: \n"
   du -sh tmp.bundle
   rm tmp.bundle
+
+#--------------------------------------------------------------------
+# APFS Utilities
+#--------------------------------------------------------------------
+# List Available Local Snapshots
+elif [ "$function" == "apfs:list" ]; then
+  tmutil listlocalsnapshotdates
+
+# Create Local Snapshots
+elif [ "$function" == "apfs:create" ]; then
+  tmutil localsnapshot
 
 #--------------------------------------------------------------------
 
