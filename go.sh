@@ -106,6 +106,7 @@ if [[ "$function" == "list" || "$function" == "help" || "$function" == "" ]]; th
     printf "${LIGHTBLUE}go install:brewpip${GRAY} : Install ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go remove:brewpip${GRAY} : Remove ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go update:brewpip${GRAY} : Update ALL Homebrew & PIP software\n"
+    printf "${LIGHTBLUE}go update:pihole${GRAY} : Update Pi-Hole software\n"
     printf "${LIGHTBLUE}go install:software${GRAY} : Install necessary software\n"
     printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
     printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
@@ -237,6 +238,7 @@ elif [ "$function" == "list:setup" ]; then
     printf "${LIGHTBLUE}go install:brewpip${GRAY} : Install ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go remove:brewpip${GRAY} : Remove ALL Homebrew & PIP software\n"
     printf "${LIGHTBLUE}go update:brewpip${GRAY} : Update ALL Homebrew & PIP software\n"
+    printf "${LIGHTBLUE}go update:pihole${GRAY} : Update Pi-Hole software\n"
     printf "${LIGHTBLUE}go install:software${GRAY} : Install necessary software\n"
     printf "${LIGHTBLUE}go disable:callhome${GRAY} : Disable Apple Call Homes (custom)\n" 
     printf "${LIGHTBLUE}go enable:callhome${GRAY} : Enable Apple Call Homes (stock)\n" 
@@ -833,6 +835,10 @@ fi
 # According to Homebrew's Anonymous Aggregate User Behaviour Analytics, Homebrew gathers anonymous aggregate user behaviour analytics and reporting these to Google Analytics. To opt out of Homebrew's analytics:
 brew analytics off
 
+# topgrade
+# https://github.com/r-darwish/topgrade
+brew install topgrade
+
 # mas
 brew install mas
 
@@ -954,6 +960,16 @@ elif [ "$function" == "update:brewpip" ]; then
   printf "${GREEN}pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U\n${NC}"
   #${PIPLOC}/pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 ${PIPLOC}/pip3 install -U
   pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+  echo
+
+elif [ "$function" == "update:pihole" ]; then
+  echo "Updating Pi-Hole on remote server..."
+  echo "Connecting to Pi-Master..."
+  sleep 3
+  printf "${GREEN}ssh 192.168.0.11 "pihole -up";\n${NC}"
+  ssh 192.168.0.11 "pihole -up"
+  echo
+  sleep 3
   echo
 
 elif [ "$function" == "install:software" ]; then
